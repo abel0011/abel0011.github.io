@@ -11,7 +11,9 @@ $header: $conifer !default;
 $blockquote-color: $silver-chalice !default;
 $blockquote-border: $dove-grey !default;
 $text-green: $green-hack !default;
-
+$text-red: $red !default;
+$text-white: $white !default;
+$text-root:$root !default;
 
 body {
   margin: 0;
@@ -142,9 +144,20 @@ dt {
   font-weight: bold;
 }
 
-ul li {
-  list-style-image:url('../assets/bullet.png');
+ li {
+  list-style: "▷" ;
+  padding:0 10px 0;
+  color: #EE82EE;
+  animation: listStyle 2s infinite both;
 }
+
+p{
+  color: $text-white;
+}
+time{
+  color: $text-green;
+}
+
 
 blockquote {
   color: $blockquote-color;
@@ -276,7 +289,7 @@ a:active, a:focus {
 
 /*Custom*/
 .text-root{
-  color:#D7AF00;
+  color: $text-root;
 }
 .text-hacker{
   animation: textFlicker 0.9s infinite both;
@@ -298,19 +311,34 @@ a{
 
 @keyframes textFlicker{
   0%{
-    text-shadow:2px 2px 0 red;
+    text-shadow:2px 2px 0 $text-red;
   }
   25%{
-    text-shadow:1px 1px 1px red;
+    text-shadow:1px 1px 1px $text-red;
   }
   50%{
-    text-shadow:2px 2px 2px red;
+    text-shadow:2px 2px 2px $text-red;
   }
   75%{
-text-shadow:1px 1px 0 red,1px 1px 0 red ;
+text-shadow:2px 2px 0 $text-red;
   }
   100%{
-    text-shadow:1px 1px 5px red,0px 0px 0 red,-1px -1px 0 red;
+    text-shadow:1px 1px 5px $text-red,0px 0px 0 $text-red,-1px -1px 0 $text-red;
   }
   
+}
+
+@keyframes listStyle {
+  0%{
+    color:$text-red;
+    animation: all 0.3s;
+  }
+  50%{
+    list-style: "▷▷";
+    color:$text-red;
+    animation: all 0.4s;
+  }
+  100%{
+  }
+
 }
