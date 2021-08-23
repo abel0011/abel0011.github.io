@@ -14,7 +14,7 @@ $text-green: $green-hack !default;
 $text-red: $red !default;
 $text-white: $white !default;
 $text-root:$root !default;
-
+$text-pink: #EE82EE;
 body {
   margin: 0;
   padding: 0;
@@ -147,7 +147,7 @@ dt {
  li {
   list-style: "▷" ;
   padding:0 10px 0;
-  color: #EE82EE;
+  color: $text-pink;
   animation: listStyle 2s infinite both;
 }
 
@@ -337,8 +337,6 @@ text-shadow:2px 2px 0 $text-red;
     list-style: "▷▷";
     color:$text-red;
     animation: all 0.4s;
-  }
-  100%{
   }
 
 }
