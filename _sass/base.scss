@@ -5,16 +5,18 @@
 @import "rouge-base16-dark";
 @import "default_colors";
 
-$body-background: $cod-grey !default;
+$body-background: $dark-blue !default;
 $body-foreground: $gallery !default;
 $header: $conifer !default;
 $blockquote-color: $silver-chalice !default;
 $blockquote-border: $dove-grey !default;
+$text-green: $green-hack !default;
+
 
 body {
   margin: 0;
   padding: 0;
-  background: $body-background url("../assets/bkg.png") 0 0;
+  background: $body-background ;
   color: $body-foreground;
   font-size: 16px;
   line-height: 1.5;
@@ -50,7 +52,7 @@ li {
 */
 
 header {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.4);
   border-bottom: 1px dashed $conifer; //header;
   padding: 20px;
   margin: 0 0 40px 0;
@@ -270,4 +272,45 @@ a:active, a:focus {
 
 #wrapper {
   min-height: calc(100vh - 100px);
+}
+
+/*Custom*/
+.text-root{
+  color:#D7AF00;
+}
+.text-hacker{
+  animation: textFlicker 0.9s infinite both;
+}
+
+a{
+  text-decoration: none;
+  text-decoration:none
+}
+
+.text-flashing{
+  animation: textFlashing 1.1s infinite;
+}
+@keyframes textFlashing {
+  to{
+    opacity: 0;
+  }
+}
+
+@keyframes textFlicker{
+  0%{
+    text-shadow:2px 2px 0 red;
+  }
+  25%{
+    text-shadow:1px 1px 1px red;
+  }
+  50%{
+    text-shadow:2px 2px 2px red;
+  }
+  75%{
+text-shadow:1px 1px 0 red,1px 1px 0 red ;
+  }
+  100%{
+    text-shadow:1px 1px 5px red,0px 0px 0 red,-1px -1px 0 red;
+  }
+  
 }
