@@ -1,4 +1,4 @@
-I"j"<p>Acompañe a aprender a <strong>gestionar</strong> una herramienta muy potente, <strong>tmux</strong> es un multiplexador de terminales que permite lanzar múltiples terminales.</p>
+I"P"<p>Acompañe a aprender a <strong>gestionar</strong> una herramienta muy potente, <strong>tmux</strong> es un multiplexador de terminales que permite lanzar múltiples terminales.</p>
 
 <p>Esta información es una recopilación de  <a href="https://www.youtube.com/watch?v=1dDahc214co">https://www.youtube.com/watch?v=1dDahc214co</a></p>
 
@@ -51,11 +51,10 @@
 [ctrl + b] + } =&gt; alternar paneles
 </code></pre></div></div>
 
-<p><img src="./../assets/tmux/segundo-panel.png" /></p>
+<p><img src="" alt="" />
+    [ctrl + b] + c =&gt; crear un panelnuevo</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + &amp; =&gt; cerrar la session
-
-[ctrl + b] + &amp; =&gt; cerrar la session
 
 [ctrl + b] + &amp; =&gt; cerrar la session
 

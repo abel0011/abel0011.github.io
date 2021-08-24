@@ -19,15 +19,11 @@ Personaliza tmux con el tema !Oh my tmux! <https://github.com/gpakosz/.tmux>
 
 ![renombrando panel](./../assets/tmux/renombrando-panel.PNG)
 
-    [ctrl + b] + c => crear un panel nuevo
+    [ctrl + b] + 2 => navegando al segundo panel
 
-![creadno un nuevo panel](./../assets/tmux/nuevo-panel.PNG)
+![redirigiendo al segundo panel](../assets/tmux/segundo-panel.PNG)
 
-    [ctrl + b] + 3 => navegando al tercer panel
-
-![redirigiendo al segundo panel](../assets/tmux/tercer-panel.PNG)
-
-    [ctrl + b] + $ => renombrando sesión
+    [ctrl + b] + $ => renombrando panel
 
 ![]()
 
@@ -55,6 +51,7 @@ Personaliza tmux con el tema !Oh my tmux! <https://github.com/gpakosz/.tmux>
 
 ![]()
 
+    [ctrl + b] + c => crear un panel nuevo
 
 ![]()
 
@@ -94,27 +91,23 @@ Personaliza tmux con el tema !Oh my tmux! <https://github.com/gpakosz/.tmux>
 
 ![]()
 
-    [ctrl + b] + s => previsualización de las sesiones activas (q para salir de esta previsualización)
+    [ctrl + b] + s => cerrar la session
 
 ![]()
 
-    [ctrl + b] + w => previsualización de las sesiones con su jerarquía
-
+    [ctrl + b] + & => cerrar la session
 ![]()
-
-    [ctrl + b] + q => visualización de los números identificativos de cada panele
-
+    [ctrl + b] + & => cerrar la session
 ![]()
-
-    [ctrl + b] + t => mostrar la hora en el panel actual
-
+    [ctrl + b] + & => cerrar la session
 ![]()
-
-    [ctrl + b] + (:join -s 1 -t 2) => unir el panel uno con el segundo panel
-
+    [ctrl + b] + & => cerrar la session
 ![]()
-
-    [ctrl + b] + (:swap-window -s 2 -t 1) => alternar el segundo panel a la primera posición
+    [ctrl + b] + & => cerrar la session
+![]()
+    [ctrl + b] + & => cerrar la session
+![]()
+    [ctrl + b] + & => cerrar la session
 
 
 ## [](#header-2)Header 2

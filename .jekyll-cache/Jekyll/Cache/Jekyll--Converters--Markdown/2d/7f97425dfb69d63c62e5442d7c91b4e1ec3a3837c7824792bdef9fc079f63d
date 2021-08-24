@@ -1,4 +1,4 @@
-I"j"<p>Acompañe a aprender a <strong>gestionar</strong> una herramienta muy potente, <strong>tmux</strong> es un multiplexador de terminales que permite lanzar múltiples terminales.</p>
+I"�+<p>Acompañe a aprender a <strong>gestionar</strong> una herramienta muy potente, <strong>tmux</strong> es un multiplexador de terminales que permite lanzar múltiples terminales.</p>
 
 <p>Esta información es una recopilación de  <a href="https://www.youtube.com/watch?v=1dDahc214co">https://www.youtube.com/watch?v=1dDahc214co</a></p>
 
@@ -24,51 +24,99 @@
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + $ =&gt; renombrando panel
 </code></pre></div></div>
 
-<p><img src="../assets/tmux/segundo-panel.PNG" alt="redirigiendo al segundo panel" /></p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + $ =&gt; renombrando panel
-</code></pre></div></div>
-
-<p><img src="../assets/tmux/segundo-panel.PNG" alt="redirigiendo al segundo panel" /></p>
+<p><img src="" alt="" /></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + " =&gt; split horizontal del panel actual
 </code></pre></div></div>
 
-<p><img src="../assets/tmux/segundo-panel.PNG" alt="redirigiendo al segundo panel" /></p>
+<p><img src="" alt="" /></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + % =&gt; split vertical del panel actual
 </code></pre></div></div>
 
-<p><img src="../assets/tmux/segundo-panel.PNG" alt="redirigiendo al segundo panel" /></p>
+<p><img src="" alt="" /></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + x =&gt; cerrar el panel actual
-
-[ctrl + b] + &amp; =&gt; cerrar la session
-
-[ctrl + b] + space =&gt; mover las ventanas en la dirección de las agujas del reloj
-
-
-[ctrl + b] + } =&gt; alternar paneles
 </code></pre></div></div>
 
-<p><img src="./../assets/tmux/segundo-panel.PNG" /></p>
+<p><img src="" alt="" /></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + &amp; =&gt; cerrar la session
+</code></pre></div></div>
 
-[ctrl + b] + &amp; =&gt; cerrar la session
+<p><img src="" alt="" /></p>
 
-[ctrl + b] + &amp; =&gt; cerrar la session
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + space =&gt; mover las ventanas en la dirección de las agujas del reloj
+</code></pre></div></div>
 
-[ctrl + b] + &amp; =&gt; cerrar la session
+<p><img src="" alt="" /></p>
 
-[ctrl + b] + &amp; =&gt; cerrar la session
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + } =&gt; alternar paneles
+</code></pre></div></div>
 
-[ctrl + b] + &amp; =&gt; cerrar la session
+<p><img src="" alt="" /></p>
 
-[ctrl + b] + &amp; =&gt; cerrar la session
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + c =&gt; crear un panel nuevo
+</code></pre></div></div>
 
-[ctrl + b] + &amp; =&gt; cerrar la session
+<p><img src="" alt="" /></p>
 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + m =&gt; activar el uso del mouse
+</code></pre></div></div>
+
+<p><img src="" alt="" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + [up, down, left, right] =&gt; redimensionar el panel actual con el uso de las flechas
+</code></pre></div></div>
+
+<p><img src="" alt="" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + [shift + 1] =&gt; mover el panel actual a uno nuevo
+</code></pre></div></div>
+
+<p><img src="" alt="" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + (shift + [ ) =&gt; activar el modo copia
+</code></pre></div></div>
+
+<p><img src="" alt="" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + space] =&gt; una vez ingresado en el modo copia, activas el modo selección
+</code></pre></div></div>
+
+<p><img src="" alt="" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + s] =&gt; una vez ingresado en el modo copia, activas el modo busqueda
+</code></pre></div></div>
+
+<p><img src="" alt="" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + w] =&gt; copias lo que has seleccionado ( presiona q para salir del modo copia)
+</code></pre></div></div>
+
+<p><img src="" alt="" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> tmux list-session =&gt; mostrar las sesiones activas
+</code></pre></div></div>
+
+<p><img src="" alt="" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tmux attach -t "test" =&gt; ingresar a la sesión especificada
+</code></pre></div></div>
+
+<p><img src="" alt="" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + s =&gt; previsualización de las sesiones activas
+</code></pre></div></div>
+
+<p><img src="" alt="" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + &amp; =&gt; cerrar la session ![]()
+[ctrl + b] + &amp; =&gt; cerrar la session ![]()
+[ctrl + b] + &amp; =&gt; cerrar la session ![]()
+[ctrl + b] + &amp; =&gt; cerrar la session ![]()
+[ctrl + b] + &amp; =&gt; cerrar la session ![]()
+[ctrl + b] + &amp; =&gt; cerrar la session ![]()
 [ctrl + b] + &amp; =&gt; cerrar la session
 </code></pre></div></div>
 
