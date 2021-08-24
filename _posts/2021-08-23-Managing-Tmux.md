@@ -9,7 +9,7 @@ Esta información es una recopilación de  <https://www.youtube.com/watch?v=1dDa
 
 Personaliza tmux con el tema !Oh my tmux! <https://github.com/gpakosz/.tmux>
 
-# [](#header-1)Gestión de sesiones
+# [](#header-1)Gestión de la herramienta tmux
 
     tmux new-session -s "Nueva sesión" => creación de una nueva sesión
 
@@ -21,7 +21,54 @@ Personaliza tmux con el tema !Oh my tmux! <https://github.com/gpakosz/.tmux>
 
     [ctrl + b] + 2 => navegando al segundo panel
 
-![redirigiendo al segundo panel](./../assets/tmux/segundo-panel.PNG)
+![redirigiendo al segundo panel](../assets/tmux/segundo-panel.PNG)
+
+    [ctrl + b] + $ => renombrando panel
+
+![redirigiendo al segundo panel](../assets/tmux/segundo-panel.PNG)
+
+    [ctrl + b] + $ => renombrando panel
+
+![redirigiendo al segundo panel](../assets/tmux/segundo-panel.PNG)
+
+    [ctrl + b] + " => split horizontal del panel actual
+
+![redirigiendo al segundo panel](../assets/tmux/segundo-panel.PNG)
+
+    [ctrl + b] + % => split vertical del panel actual
+
+![redirigiendo al segundo panel](../assets/tmux/segundo-panel.PNG)
+
+    [ctrl + b] + x => cerrar el panel actual
+
+    [ctrl + b] + & => cerrar la session
+
+    [ctrl + b] + space => mover las ventanas en la dirección de las agujas del reloj
+
+
+    [ctrl + b] + } => alternar paneles
+
+<img src="./../assets/tmux/segundo-panel.png">
+
+    [ctrl + b] + & => cerrar la session
+
+    [ctrl + b] + & => cerrar la session
+
+    [ctrl + b] + & => cerrar la session
+
+    [ctrl + b] + & => cerrar la session
+
+    [ctrl + b] + & => cerrar la session
+
+    [ctrl + b] + & => cerrar la session
+
+    [ctrl + b] + & => cerrar la session
+
+    [ctrl + b] + & => cerrar la session
+
+    [ctrl + b] + & => cerrar la session
+
+
 ## [](#header-2)Header 2
 
 > This is a blockquote following a header.

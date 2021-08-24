@@ -1,10 +1,10 @@
-I"�<p>Acompañe a aprender a <strong>gestionar</strong> una herramienta muy potente, <strong>tmux</strong> es un multiplexador de terminales que permite lanzar múltiples terminales.</p>
+I"j"<p>Acompañe a aprender a <strong>gestionar</strong> una herramienta muy potente, <strong>tmux</strong> es un multiplexador de terminales que permite lanzar múltiples terminales.</p>
 
 <p>Esta información es una recopilación de  <a href="https://www.youtube.com/watch?v=1dDahc214co">https://www.youtube.com/watch?v=1dDahc214co</a></p>
 
 <p>Personaliza tmux con el tema !Oh my tmux! <a href="https://github.com/gpakosz/.tmux">https://github.com/gpakosz/.tmux</a></p>
 
-<h1 id="gestión-de-sesiones"><a href="#header-1"></a>Gestión de sesiones</h1>
+<h1 id="gestión-de-la-herramienta-tmux"><a href="#header-1"></a>Gestión de la herramienta tmux</h1>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tmux new-session -s "Nueva sesión" =&gt; creación de una nueva sesión
 </code></pre></div></div>
@@ -19,7 +19,59 @@
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + 2 =&gt; navegando al segundo panel
 </code></pre></div></div>
 
-<p><img src="./../assets/tmux/segundo-panel.PNG" alt="redirigiendo al segundo panel" /></p>
+<p><img src="../assets/tmux/segundo-panel.PNG" alt="redirigiendo al segundo panel" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + $ =&gt; renombrando panel
+</code></pre></div></div>
+
+<p><img src="../assets/tmux/segundo-panel.PNG" alt="redirigiendo al segundo panel" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + $ =&gt; renombrando panel
+</code></pre></div></div>
+
+<p><img src="../assets/tmux/segundo-panel.PNG" alt="redirigiendo al segundo panel" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + " =&gt; split horizontal del panel actual
+</code></pre></div></div>
+
+<p><img src="../assets/tmux/segundo-panel.PNG" alt="redirigiendo al segundo panel" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + % =&gt; split vertical del panel actual
+</code></pre></div></div>
+
+<p><img src="../assets/tmux/segundo-panel.PNG" alt="redirigiendo al segundo panel" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + x =&gt; cerrar el panel actual
+
+[ctrl + b] + &amp; =&gt; cerrar la session
+
+[ctrl + b] + space =&gt; mover las ventanas en la dirección de las agujas del reloj
+
+
+[ctrl + b] + } =&gt; alternar paneles
+</code></pre></div></div>
+
+<p><img src="./../assets/tmux/segundo-panel.png" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + &amp; =&gt; cerrar la session
+
+[ctrl + b] + &amp; =&gt; cerrar la session
+
+[ctrl + b] + &amp; =&gt; cerrar la session
+
+[ctrl + b] + &amp; =&gt; cerrar la session
+
+[ctrl + b] + &amp; =&gt; cerrar la session
+
+[ctrl + b] + &amp; =&gt; cerrar la session
+
+[ctrl + b] + &amp; =&gt; cerrar la session
+
+[ctrl + b] + &amp; =&gt; cerrar la session
+
+[ctrl + b] + &amp; =&gt; cerrar la session
+</code></pre></div></div>
+
 <h2 id="header-2"><a href="#header-2"></a>Header 2</h2>
 
 <blockquote>
