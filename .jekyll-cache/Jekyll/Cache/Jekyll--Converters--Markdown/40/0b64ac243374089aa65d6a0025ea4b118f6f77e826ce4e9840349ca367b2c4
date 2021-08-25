@@ -1,0 +1,139 @@
+I"�<p>Acompañe a aprender a <strong>gestionar</strong> una herramienta muy potente, <strong>tmux</strong> es un multiplexador de terminales que permite lanzar múltiples terminales.</p>
+
+<p>Esta información es una recopilación de  <a href="https://www.youtube.com/watch?v=1dDahc214co">https://www.youtube.com/watch?v=1dDahc214co</a></p>
+
+<p>Personaliza tmux con el tema !Oh my tmux! <a href="https://github.com/gpakosz/.tmux">https://github.com/gpakosz/.tmux</a></p>
+
+<h1 id="gestión-de-la-herramienta-tmux"><a href="#header-1"></a>Gestión de la herramienta tmux</h1>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tmux new-session -s "Nueva sesión" =&gt; creación de una nueva sesión
+</code></pre></div></div>
+
+<p><img src="./../assets/tmux/sesion-iniciada.PNG" alt="nueva sessión" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + , =&gt; renombrar el panel actual  
+</code></pre></div></div>
+
+<p><img src="./../assets/tmux/renombrando-panel.PNG" alt="renombrando panel" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + c =&gt; crear un panel nuevo
+</code></pre></div></div>
+
+<p><img src="./../assets/tmux/nuevo-panel.PNG" alt="creadno un nuevo panel" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + 3 =&gt; navegando al tercer panel
+</code></pre></div></div>
+
+<p><img src="../assets/tmux/tercer-panel.PNG" alt="redirigiendo al segundo panel" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + $ =&gt; renombrando sesión
+</code></pre></div></div>
+
+<p><img src="./../assets/tmux/renombrando-sesion.PNG" alt="renombrando sesión" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + " =&gt; split horizontal del panel actual
+</code></pre></div></div>
+
+<p><img src="./../assets/tmux/split-horizontal.PNG" alt="split horizontal" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + % =&gt; split vertical del panel actual
+</code></pre></div></div>
+
+<p><img src="./../assets/tmux/split-vertical.PNG" alt="split vertical" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + x =&gt; cerrar el panel actual
+</code></pre></div></div>
+
+<p><img src="./../assets/tmux/cerrar-panel-actual.PNG" alt="cerrar panel" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + &amp; =&gt; cerrar la session
+</code></pre></div></div>
+
+<p><img src="./../assets/tmux/cerrar-sesion.PNG" alt="cerrar sessión" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + space =&gt; mover los paneles en la dirección de las agujas del reloj
+</code></pre></div></div>
+
+<p><img src="./../assets/tmux/mover-panel-reloj.PNG" alt="mover los paneles" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + } =&gt; alternar paneles
+</code></pre></div></div>
+
+<p><img src="./../assets/tmux/alternar-panel.PNG" alt="alternar paneles" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + m =&gt; activar el uso del mouse
+</code></pre></div></div>
+
+<p><img src="./../assets/tmux/modo-mouse.PNG" alt="activar el uso del mouse" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + [up, down, left, right] =&gt; redimensionar el panel actual con el uso de las flechas
+</code></pre></div></div>
+
+<p><img src="./../assets/tmux/resize-panel.PNG" alt="redimensionar el panel" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + [shift + 1] =&gt; mover el panel actual a uno nuevo
+</code></pre></div></div>
+
+<p><img src="./../assets/tmux/move-current-panel.PNG" alt="mover el panel actual a uno nuevo" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + (shift + [ ) =&gt; activar el modo copia
+</code></pre></div></div>
+
+<p><img src="./../assets/tmux/" alt="modo copia" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + space] =&gt; una vez ingresado en el modo copia, activas el modo selección
+</code></pre></div></div>
+
+<p><img src="" alt="modo selección" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + s] =&gt; una vez ingresado en el modo copia, activas el modo busqueda
+</code></pre></div></div>
+
+<p><img src="" alt="modo busqueda" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + w] =&gt; copias lo que has seleccionado ( presiona q para salir del modo copia)
+</code></pre></div></div>
+
+<p><img src="" alt="copiar la selección" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> tmux list-session =&gt; mostrar las sesiones activas
+</code></pre></div></div>
+
+<p><img src="" alt="mostrar sesiones" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tmux attach -t "test" =&gt; ingresar a la sesión especificada
+</code></pre></div></div>
+
+<p><img src="" alt="ingresar a la sesión" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + s =&gt; previsualización de las sesiones activas (q para salir de esta previsualización)
+</code></pre></div></div>
+
+<p><img src="" alt="sesiones activas" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + w =&gt; previsualización de las sesiones con su jerarquía
+</code></pre></div></div>
+
+<p><img src="" alt="visualización jerarquíca" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + q =&gt; visualización de los números identificativos de cada panele
+</code></pre></div></div>
+
+<p><img src="" alt="vidualización de los números identificativos" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + t =&gt; mostrar la hora en el panel actual
+</code></pre></div></div>
+
+<p><img src="" alt="mostrar hora" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + (:join -s 1 -t 2) =&gt; unir el panel uno con el segundo panel
+</code></pre></div></div>
+
+<p><img src="" alt="unir panel" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + (:swap-window -s 2 -t 1) =&gt; alternar el segundo panel a la primera posición
+</code></pre></div></div>
+
+<p><img src="./../assets/tmux/" alt="alternar el segundo panel" /></p>
+
+:ET
