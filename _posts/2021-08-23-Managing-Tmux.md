@@ -35,36 +35,36 @@ Manual de tmux <https://man.openbsd.org/OpenBSD-current/man1/tmux.1>
 
     [ctrl + b] + " => split horizontal del panel actual
 
-![split horizontal](./../assets/tmux/split-horizontal.PNG)
+![split horizontal](./../assets/tmux/split-horizontal.png)
 
     [ctrl + b] + % => split vertical del panel actual
 
-![split vertical](./../assets/tmux/split-vertical.PNG)
+![split vertical](./../assets/tmux/split-vertical.png)
 
     [ctrl + b] + x => cerrar el panel actual
 
-![cerrar panel](./../assets/tmux/cerrar-panel-actual.PNG)
+![cerrar panel](./../assets/tmux/cerrar-panel-actual.png)
 
     [ctrl + b] + & => cerrar la session
 
-![cerrar sessión](./../assets/tmux/cerrar-sesion.PNG)
+![cerrar sessión](./../assets/tmux/cerrar-sesion.png)
 
     [ctrl + b] + space => mover los paneles en la dirección de las agujas del reloj
 
-![mover los paneles](./../assets/tmux/mover-panel-reloj.PNG)
+![mover los paneles](./../assets/tmux/mover-panel-reloj.png)
 
     [ctrl + b] + } => alternar paneles
 
-![alternar paneles](./../assets/tmux/alternar-panel.PNG)
+![alternar paneles](./../assets/tmux/alternar-panel.png)
 
 
     [ctrl + b] + m => activar el uso del mouse
 
-![activar el uso del mouse](./../assets/tmux/modo-mouse.PNG)
+![activar el uso del mouse](./../assets/tmux/modo-mouse.png)
 
     [ctrl + b] + [up, down, left, right] => redimensionar el panel actual con el uso de las flechas
 
-![redimensionar el panel](./../assets/tmux/resize-panel.PNG)
+![redimensionar el panel](./../assets/tmux/resize-panel.png)
 
     [ctrl + b] + [shift + 1] => mover el panel actual a uno nuevo
 
@@ -72,49 +72,49 @@ Manual de tmux <https://man.openbsd.org/OpenBSD-current/man1/tmux.1>
 
     [ctrl + b] + (shift + [ ) => activar el modo copia
 
-![modo copia](./../assets/tmux/modo-copia.PNG)
+![modo copia](./../assets/tmux/modo-copia.png)
 
     [ctrl + space] => una vez ingresado en el modo copia, activas el modo selección
 
-![modo selección](./../assets/tmux/modo-seleccion.PNG)
+![modo selección](./../assets/tmux/modo-seleccion.png)
 
     [ctrl + s] => una vez ingresado en el modo copia, activas el modo busqueda
 
-![modo busqueda](./../assets/tmux/modo-busqueda.PNG)
+![modo busqueda](./../assets/tmux/modo-busqueda.png)
 
     [ctrl + w] => copias lo que has seleccionado ( presiona q para salir del modo copia)
 
-![copiar la selección](./../assets/tmux/copiar-texto.PNG)
+![copiar la selección](./../assets/tmux/copiar-texto.png)
 
      tmux list-session => mostrar las sesiones activas
 
-![mostrar sesiones](./../assets/tmux/session-list.PNG)
+![mostrar sesiones](./../assets/tmux/session-list.png)
 
     tmux attach -t "test" => ingresar a la sesión especificada
 
-![ingresar a la sesión](./../assets/tmux/ingresar-sesion.PNG)
+![ingresar a la sesión](./../assets/tmux/ingresar-sesion.png)
 
     [ctrl + b] + s => previsualización de las sesiones activas (q para salir de esta previsualización)
 
-![sesiones activas](./../assets/tmux/sesiones-activas.PNG)
+![sesiones activas](./../assets/tmux/sesiones-activas.png)
 
     [ctrl + b] + w => previsualización de las sesiones con su jerarquía
 
-![visualización jerarquíca](./assets/tmux/jerarquia-sesiones.PNG)
+![visualización jerarquíca](./assets/tmux/jerarquia-sesiones.png)
 
     [ctrl + b] + q => visualización de los números identificativos de cada panele
 
-![vidualización de los números identificativos](./assets/tmux/numero-panel.PNG)
+![vidualización de los números identificativos](./assets/tmux/numero-panel.png)
 
     [ctrl + b] + t => mostrar la hora en el panel actual
 
-![mostrar hora](./../assets/tmux/hora.PNG)
+![mostrar hora](./../assets/tmux/hora.png)
 
     [ctrl + b] + (:join -s 1 -t 2) => unir el panel uno con el segundo panel
 
-![unir panel](./../assets/tmux/unir-panel.PNG)
+![unir panel](./../assets/tmux/unir-panel.png)
 
     [ctrl + b] + (:swap-window -s 2 -t 1) => alternar el segundo panel a la primera posición
 
-![alternar el segundo panel](./../assets/tmux/swap-panel.PNG)
+![alternar el segundo panel](./../assets/tmux/swap-panel.png)
 
