@@ -76,7 +76,7 @@
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + [shift + 1] =&gt; mover el panel actual a uno nuevo
 </code></pre></div></div>
 
-<p><img src="./../assets/tmux/move-current-panel.PNG" alt="mover el panel actual a uno nuevo" /></p>
+<p><img src="./../assets/tmux/move-current-panel.png" alt="mover el panel actual a uno nuevo" /></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ctrl + b] + (shift + [ ) =&gt; activar el modo copia
 </code></pre></div></div>

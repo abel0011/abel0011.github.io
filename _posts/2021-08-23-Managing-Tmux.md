@@ -68,7 +68,7 @@ Manual de tmux <https://man.openbsd.org/OpenBSD-current/man1/tmux.1>
 
     [ctrl + b] + [shift + 1] => mover el panel actual a uno nuevo
 
-![mover el panel actual a uno nuevo](./../assets/tmux/move-current-panel.PNG)
+![mover el panel actual a uno nuevo](./../assets/tmux/move-current-panel.png)
 
     [ctrl + b] + (shift + [ ) => activar el modo copia
 
