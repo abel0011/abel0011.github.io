@@ -1,5 +1,5 @@
 ---
-title: Yet Another Sample Page
+title: How to use nano
 published: true
 ---
 
