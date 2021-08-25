@@ -9,6 +9,8 @@ Esta información es una recopilación de  <https://www.youtube.com/watch?v=1dDa
 
 Personaliza tmux con el tema !Oh my tmux! <https://github.com/gpakosz/.tmux>
 
+Manual de tmux <https://man.openbsd.org/OpenBSD-current/man1/tmux.1>
+
 # [](#header-1)Gestión de la herramienta tmux
 
     tmux new-session -s "Nueva sesión" => creación de una nueva sesión
