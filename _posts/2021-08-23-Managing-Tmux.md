@@ -23,7 +23,7 @@ Manual de tmux <https://man.openbsd.org/OpenBSD-current/man1/tmux.1>
 
     [ctrl + b] + c => crear un panel nuevo
 
-![creadno un nuevo panel](./../assets/tmux/nuevo-panel.PNG)
+![creadno un nuevo panel](./../assets/tmux/nuevo-panel.png)
 
     [ctrl + b] + 3 => navegando al tercer panel
 
