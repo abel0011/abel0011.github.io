@@ -145,7 +145,7 @@ dt {
 }
 
  li {
-  list-style: "▷" ;
+  list-style: "▶" ;
   padding:0 10px 0;
   color: $text-pink;
   animation: listStyle 2s infinite both;
@@ -334,7 +334,7 @@ text-shadow:2px 2px 0 $text-red;
     animation: all 0.3s;
   }
   50%{
-    list-style: "▷▷";
+    list-style: "▶▶";
     color:$text-red;
     animation: all 0.4s;
   }

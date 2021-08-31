@@ -1,4 +1,4 @@
-I"´<section>
+I"q<section>
   
 
     
@@ -11,9 +11,9 @@
       
         <ul>
       
-        <li><time>25 Aug - </time>
-          <a href="/Editor-Texto-Nano">
-            How to use nano
+        <li><time>23 Aug - </time>
+          <a href="/Managing-Tmux">
+            Managing Tmux
           </a>
         </li>
     
@@ -22,9 +22,20 @@
         
         
       
-        <li><time>23 Aug - </time>
-          <a href="/Managing-Tmux">
-            Managing Tmux
+        <li><time>20 Aug - </time>
+          <a href="/Scripting-Bash">
+            Scripting Bash
+          </a>
+        </li>
+    
+      
+        
+        
+        
+      
+        <li><time>20 Aug - </time>
+          <a href="/How-to-use-Nano">
+            How to use the nano text editor?
           </a>
         </li>
     
