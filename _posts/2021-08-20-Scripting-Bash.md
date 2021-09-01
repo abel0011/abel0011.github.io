@@ -6,6 +6,9 @@ published: true
 Bash interfaz de usuario de linea de comandos, especificamente una shell de unix,
 asi como un lenguaje de scripting, es el caparazón del proyexto GNU
 
+
+El contenido presentado es una recopilación de <https://www.youtube.com/watch?v=RUorAzaDftg>
+
 <hr>
 **Movilidad en gnu/linux**
 ==========================
@@ -116,25 +119,120 @@ Fuente <https://francisconi.org/linux/expresiones-regulares>
 ~$ cat * => mostar todo lo que se encuntre en este directorio o ruta
 ~~~
 
+<br>
+<hr>
+**Sesión Tres**
+==============
+<hr>
+
 ~~~
-~$ =>
+~$ ls -a => listar ficheros ocultos 
 ~~~
 
 ~~~
-~$ =>
+~$ find . => mustrame todo el contenido partiendo de la ruta actual
 ~~~
 
 ~~~
-~$ =>
+~$ find -type f => encuentrame solo los ficheros
 ~~~
 
 ~~~
-~$ =>
+~$ find -type f -printf "f%\t%u\t%g\t%m\n" | column -t 
+   => -printf : me imprima
+   => %f : ficheros
+   => t%p : de forma tabula me indiques la ruta absoluta
+   => t%u : de forma tabulada  me indiques el usuario propietario
+   => t%g : de forma tabulada me indiques el  grupo asignado
+   => t%m : de forma tabulada me indiques el modo (permiso asignado a niver numerico )
+   => \n : salto de linea, para formatear el output 
+   => -t : formatea el output en una tabla
 ~~~
 
 ~~~
-~$ =>
+~$ touch .hidden => crear un fichero oculto
 ~~~
+
+~~~
+~$ echo "este fichero no es visible" > .hidden => agregando cadena de caracteres al fichero
+~~~ 
+
+~~~
+~$ cd / => cambiando de directorio a la ruta raiz
+~~~
+
+~~~
+~$ find . -name .hidden 2>/dev/null => encuentrame el fichero ".hidden" partiendo del directorio actual
+~~~
+
+~~~
+xargs: ejecuta un comando de forma paralela, con el output del comando ejecutado anteriormente
+~~~
+
+~~~
+~$ find . -name .hidden | xargs cat => encuntrame el fichero ".hidden" y asu vez muestrame su contenido
+~~~
+
+~~~
+~$ find . -type f | xargs grep "este fichero" 2>/dev/null => encuentra el fichero con el contenido "este fichero"
+~~~
+
+<br>
+<hr>
+**Sesión Cuatro**
+==============
+<hr>
+
+~~~
+permisos en linux
+.rwxrwxrwx .hidden 
+r - 4 => read
+w - 2 => write
+x - 1 => execute
+(rwx) (--x) (--x)
+ 111   001   001 
+ 2^0=1     2^0   2^0
+ 2^1=2
+ 2^2=4
+   6        1      1
+~~~
+
+~~~
+~$ sudo useradd pepito => creando usuario pepito (por defecto se crea un grupo con su mismo nombre)
+~~~
+
+~~~
+~$ mkdir directorio_pepito => creando directorio
+~~~
+
+~~~
+~$ chgrp pepito directorio_pepito => change group, asignando el grupo pepito a la carpeta "directorio_pepito"
+~~~
+
+~~~
+~$ chown pepito directorio_pepito => asignando a pepito como usuario propietario de la carpeta
+~~~
+
+~~~
+~$ chown pepito:pepito directorio_pepito => asignando usuario y grupo a la carpeta "directorio_pepito"
+~~~
+
+~~~
+~$ chattr +i -V .hidden => asignando privilegio especial para no eliminar el archivo (ni siquiera root)
+~~~
+
+~~~
+~$ lsattr => ver los privilegios especiales
+~~~
+
+~~~
+~$ touch fichero2 && cd / => creando el "fichero2" y a su vez dirigiendome a la ruta raiz
+~~~
+
+~~~
+~$ find . -name "fich*" => encuntrame al fichero que comience con "fich" y cualquier cosa "*"
+~~~
+
 
 ~~~
 ~$ =>

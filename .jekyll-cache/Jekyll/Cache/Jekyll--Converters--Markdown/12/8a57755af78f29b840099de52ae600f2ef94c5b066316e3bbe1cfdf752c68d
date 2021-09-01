@@ -1,0 +1,190 @@
+I"�*<p>Bash interfaz de usuario de linea de comandos, especificamente una shell de unix,
+asi como un lenguaje de scripting, es el caparazón del proyexto GNU</p>
+
+<p>El contenido presentado es una recopilación de <a href="https://www.youtube.com/watch?v=RUorAzaDftg">https://www.youtube.com/watch?v=RUorAzaDftg</a></p>
+
+<hr />
+
+<h1 id="movilidad-en-gnulinux"><strong>Movilidad en gnu/linux</strong></h1>
+<hr />
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ mkdir bash =&gt; creando directorio "bash"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cd !$ =&gt; ingresando al directorio recién creado "bash"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ touch - =&gt; crear fichero "-"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ echo "cadena de caracteres" &gt; - =&gt; ingresando cadena de caracteres al fichero "-"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cat ./- =&gt; mostrar contenido del fichero que esta en "-"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ pwd =&gt; print working directory, imprimir directorio de trabajo
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cat /home/user/carpeta/bash/- =&gt; mostrando el archivo desde su ruta absoluta
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ $(pwd) =&gt; recepciona el output de pwd
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cat $(pwd)/- =&gt; mostrar el contenido de "-"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cat $(pwd)/* =&gt; mostrar el contenido de todos los ficheros que se encuentren en esa ruta
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ time $(pwd) =&gt; muestra el tiempo de ejecución de un comando
+</code></pre></div></div>
+
+<p><br /></p>
+<hr />
+
+<h1 id="sesión-dos"><strong>Sesión Dos</strong></h1>
+<hr />
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ mkdir "espacio en blanco" =&gt; creando un directo con espacios en blanco
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cd "espacio en blanco" =&gt; change directory, cambiamos de directorio
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cd espacio\ en\ blanco  =&gt; cambiando de directorio
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ touch "fichero con espacios" =&gt; creando fichero
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ echo $(cat /etc/hosts) &gt; fichero\ con\ espacios =&gt; redirigiendo la salida del comando al fichero con espacios
+</code></pre></div></div>
+
+<p><br /></p>
+<hr />
+
+<p><strong>Expreciones Regulares</strong>: secuencia de caracteres y metacaracteres que forma un patrón de búsqueda, para la búsqueda de patrones de cadenas de caracteres u operaciones de sustituciones.</p>
+
+<p>Fuente <a href="https://francisconi.org/linux/expresiones-regulares">https://francisconi.org/linux/expresiones-regulares</a></p>
+<hr />
+
+<p><br /></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cat "fichero con espacios" =&gt; mostrar el contenido del fichero
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cat fichero\ con\ espacios =&gt; mostrar el contenido del fichero
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cat fi* =&gt; mostrar el contenido del fichero que comienze con "fi" y posteriormente cualquier cosa "*"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cat *os =&gt; mostrar el contenido del fichero que comienze con cualquier cosa "*" y termine en "os"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cat /home/user/carpeta/bash/"espacio en blanco"/* =&gt; mostrar el contenido de todos los ficheros de la ruta actual
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cat "$(pwd)"/* =&gt;mostrar todo el contenido de todos los ficheros de la ruta actual
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cat * =&gt; mostar todo lo que se encuntre en este directorio o ruta
+</code></pre></div></div>
+
+<p><br /></p>
+<hr />
+
+<h1 id="sesión-tres"><strong>Sesión Tres</strong></h1>
+<hr />
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ ls -a =&gt; listar ficheros ocultos 
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ find . =&gt; mustrame todo el contenido partiendo de la ruta actual
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ find -type f =&gt; encuentrame solo los ficheros
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ find -type f -printf "f%\t%u\t%g\t%m\n" | column -t 
+   =&gt; -printf : me imprima
+   =&gt; %f : ficheros
+   =&gt; t%p : de forma tabula me indiques la ruta absoluta
+   =&gt; t%u : de forma tabulada  me indiques el usuario propietario
+   =&gt; t%g : de forma tabulada me indiques el  grupo asignado
+   =&gt; t%m : de forma tabulada me indiques el modo (permiso asignado a niver numerico )
+   =&gt; \n : salto de linea, para formatear el output 
+   =&gt; -t : formatea el output en una tabla
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ touch .hidden =&gt; crear un fichero oculto
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ echo "este fichero no es visible" &gt; .hidden =&gt; agregando cadena de caracteres al fichero
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cd / =&gt; cambiando de directorio a la ruta raiz
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ find . -name .hidden 2&gt;/dev/null =&gt; encuentrame el fichero ".hidden" partiendo del directorio actual
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xargs: ejecuta un comando de forma paralela, con el output del comando ejecutado anteriormente
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ find . -name .hidden | xargs cat =&gt; encuntrame el fichero ".hidden" y asu vez muestrame su contenido
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ find . -type f | xargs grep "este fichero" 2&gt;/dev/null =&gt; encuentra el fichero con el contenido "este fichero"
+</code></pre></div></div>
+
+<p><br /></p>
+<hr />
+
+<h1 id="sesión-cuatro"><strong>Sesión Cuatro</strong></h1>
+<hr />
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>permisos en linux
+.rwxrwxrwx .hidden 
+r - 4 =&gt; read
+w - 2 =&gt; write
+x - 1 =&gt; execute
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ sudo useradd pepito =&gt; creando usuario pepito (por defecto se crea un grupo con su mismo nombre)
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ mkdir directorio_pepito =&gt; creando directorio
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ chgrp pepito directorio_pepito =&gt; change group, asignando el grupo pepito a la carpeta "directorio_pepito"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ chown pepito directorio_pepito =&gt; asignando a pepito como usuario propietario de la carpeta
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ chown pepito:pepito directorio_pepito =&gt; asignando usuario y grupo a la carpeta "directorio_pepito"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ chattr +i -V .hidden =&gt; asignando privilegio especial para no eliminar el archivo (ni siquiera root)
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ lsattr =&gt; ver los privilegios especiales
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ find . -name "fich*" =&gt; encuntrame al fichero que comience con "fich" y cualquier cosa "*"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ =&gt;
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ =&gt;
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ =&gt;
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ =&gt;
+</code></pre></div></div>
+:ET
