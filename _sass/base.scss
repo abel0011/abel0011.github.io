@@ -16,7 +16,11 @@ $text-pink: #EE82EE;
 body {
   margin: 0;
   padding: 0;
-  background: $body-background ;
+  background: linear-gradient(rgba(17,34,64,0.6),rgba(215,107,107,0.9)),
+  repeating-linear-gradient(0, transparent, transparent 1px, black 5px, black 5px),
+  url("./../assets/error.gif");
+	background-size: cover;
+	background-position: center;
   color: $body-foreground;
   font-size: 16px;
   line-height: 1.5;
@@ -47,10 +51,11 @@ li {
 
 
 header {
-  background: rgba(0, 0, 0, 0.4);
-  border-bottom: 1px dashed $conifer; //header;
+  background: transparent;
+  border-bottom: 4px groove $conifer; //header;
   padding: 20px;
   margin: 0 0 40px 0;
+  border-radius: 5px;
 }
 
 .header-links {
@@ -139,8 +144,8 @@ dt {
 }
 
  li {
-  list-style: "▶" ;
-  padding:0 10px 0;
+	list-style: none;
+  padding: 0 10px 0;
   color: $text-pink;
   animation: listStyle 2s infinite both;
 }
@@ -346,18 +351,6 @@ a{
   
 }
 
-@keyframes listStyle {
-  0%{
-    color:$text-red;
-    animation: all 0.3s;
-  }
-  50%{
-    list-style: "▶▶";
-    color:$text-red;
-    animation: all 0.4s;
-  }
-
-}
 .glitch-header {
   text-align: center;
   color: #fff;
