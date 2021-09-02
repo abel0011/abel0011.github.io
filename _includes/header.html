@@ -2,8 +2,13 @@
   <div>
     <a href="{{ "/" | prepend: site.baseurl | replace: '//', '/' }}">
     {% assign owner_first_name = site.owner | split: " " %}
-    <h1 class="text-hacker">{{ owner_first_name[0] | downcase }}@hackNet:<span class="text-root">#</span><span class="text-flashing">|</span> </h1>
+    <h1 class="glitch-header">{{ owner_first_name[0] | downcase }}@hacknet:<span class="text-root">#</span><span class="text-flashing">|</span> </h1>
+    <h1 class="glitch-header glitch-header-two">{{ owner_first_name[0] | downcase }}@hacknet:<span class="text-root">#</span><span class="text-flashing">|</span> </h1>
+    <h1 class="glitch-header glitch-header-two glitch-header-three">{{ owner_first_name[0] | downcase }}@hacknet:<span class="text-root">#</span><span class="text-flashing">|</span> </h1>
+
     </a>
+
+
     <div class="header-links">
       {% include links.html %}
     </div>

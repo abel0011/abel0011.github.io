@@ -138,7 +138,7 @@ Fuente <https://francisconi.org/linux/expresiones-regulares>
 ~~~
 
 ~~~
-~$ find -type f -printf "f%\t%u\t%g\t%m\n" | column -t 
+~$ find -type f -printf "%f\t%u\t%g\t%m\n" | column -t 
    => -printf : me imprima
    => %f : ficheros
    => t%p : de forma tabula me indiques la ruta absoluta
@@ -189,12 +189,12 @@ permisos en linux
 r - 4 => read
 w - 2 => write
 x - 1 => execute
-(rwx) (--x) (--x)
- 111   001   001 
- 2^0=1     2^0   2^0
+(rwx)  (--x) (--x)
+ 111    001   001 
+ 2^0=1  2^0   2^0
  2^1=2
  2^2=4
-   6        1      1
+   6     1      1
 ~~~
 
 ~~~
@@ -235,13 +235,126 @@ x - 1 => execute
 
 
 ~~~
-~$ =>
+~$ which file => mostrar la ruta absoluta del binario "file" dentro del PATH
 ~~~
 
 ~~~
-~$ =>
+~$ echo $PATH => mostrar la ruta del PATH
 ~~~
 
 ~~~
-~$ =>
+~$ sudo apt install mlocate => instalando herramienta en ubuntu
+~~~
+
+~~~
+~$ sudo updatedb => creando la base de datos de los ficheros del sistema
+~~~
+
+~~~
+~$ locate fichero => realizando busqueda de "fichero"
+~~~
+
+~~~
+~$ touch script.sh && chmod +x script.sh && nano script.sh => creando archivo "script", asignando permiso de ejecución y editando el archivo
+~~~
+
+~~~bash
+#!/bin/bash
+echo -e "te encuentras en esta ruta [ $(pwd) ]"
+~~~
+
+~~~
+~$ file script.sh=> determina el tipo y formato de un archivo (para realizar esto, hace uso de los "magic numbers")
+~~~
+
+~~~
+~$ touch fichero.txt && nano fichero.txt => creando "fichero.txt" y editando fichero
+~~~
+
+~~~
+GIF8; => ingresa esto en el "fichero.txt"
+~~~
+
+~~~
+~$ file fichero.txt => nos mostrar un fichero GIF, esto se debe a los "magic numbers" (47 49 46 38 3B ...	)
+~~~
+
+<hr>
+**Scrub**: escribe patrones de forma iterativa en archivos o dispositivos de disco para dificultar la recuperación de los datos
+
+
+**Shred**: herramienta de eliminación de archivos de modo seguro
+
+Fuente: <https://www.computertechblog.com/using-scrub-command-to-secure-erase-data-in-redhat-linux/>
+				<https://www.welivesecurity.com/la-es/2014/11/24/como-hacer-borrado-seguro-shred-linux/>
+<hr>
+
+~~~bash
+function rmk(){
+  scrub -p dod $1
+  shred -zun 10 -v $1
+}
+# ingresar el el ~/.bashrc o ~/.zshrc
+# z: zero, sobreescribe 0 para evitar dejar rastro
+# u: trunca y elimina el archivo después de sobrescribirlo
+# n: número de veces a sobrescribir el archivo o partición 
+#(3 veces por defecto). Cuanto mayor sea este número, más difícil será su recuperación
+# v: verbose o verborragico, muestra el progreso en pantalla
+
+~~~
+<br>
+<hr>
+**Sesión Cinco**
+==============
+<hr>
+
+~~~
+~$ file directorio/* => mostrar que tipo y formato de archivos hay en "directorio"
+~~~
+
+~~~
+~$  mkdir example && cd example && touch fichero.jpg fichero.png fichero.txt fichero2.txt && echo "texto" > fichero2.txt && cd ..
+=>creando directorio, con ficheros
+~~~
+
+~~~
+~$ find . -name "ficher*" | xargs file 
+=> encontrar desde la ruta actual todos los ficheros que coincidan con "ficher",
+y cualquier cosa "*". A su vez me muestre el formato y tipo de archivo
+~~~
+
+~~~
+~$ time find . -name "ficher*" | xargs file 
+=> time: nos muestra el tiempo de computo del comando
+~~~
+
+~~~
+~$ time find example/* => disminuye el tiempo de computo de computo 
+~~~
+
+~~~
+~$  find . -name fichero2.txt | xargs cat
+=> realizando una busqueda de "fichero2.txt" y mostrando su contenido
+~~~
+
+~~~
+~$ cat $(find . -name fichero2.txt) 
+=>mostrando el contenido del output del comando entre "$()"
+~~~
+
+~~~
+ctrl + r => realizando búsqueda de comandos previamente ejecutados
+~~~
+<br>
+<hr>
+-writable => ficheros en los se puede escribir
+
+
+-executable => ficheros que se pueden ejecutar
+
+
+-readable => ficheros que se pueden leer
+<hr>
+~~~
+~ $
 ~~~

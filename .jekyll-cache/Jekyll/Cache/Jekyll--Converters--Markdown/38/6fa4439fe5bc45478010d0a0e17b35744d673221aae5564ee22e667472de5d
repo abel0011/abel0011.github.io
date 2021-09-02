@@ -1,4 +1,4 @@
-I"c*<p>Bash interfaz de usuario de linea de comandos, especificamente una shell de unix,
+I"<C<p>Bash interfaz de usuario de linea de comandos, especificamente una shell de unix,
 asi como un lenguaje de scripting, es el caparazón del proyexto GNU</p>
 
 <p>El contenido presentado es una recopilación de <a href="https://www.youtube.com/watch?v=RUorAzaDftg">https://www.youtube.com/watch?v=RUorAzaDftg</a></p>
@@ -107,7 +107,7 @@ asi como un lenguaje de scripting, es el caparazón del proyexto GNU</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ find -type f =&gt; encuentrame solo los ficheros
 </code></pre></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ find -type f -printf "f%\t%u\t%g\t%m\n" | column -t 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ find -type f -printf "%f\t%u\t%g\t%m\n" | column -t 
    =&gt; -printf : me imprima
    =&gt; %f : ficheros
    =&gt; t%p : de forma tabula me indiques la ruta absoluta
@@ -150,6 +150,12 @@ asi como un lenguaje de scripting, es el caparazón del proyexto GNU</p>
 r - 4 =&gt; read
 w - 2 =&gt; write
 x - 1 =&gt; execute
+(rwx)  (--x) (--x)
+ 111    001   001 
+ 2^0=1  2^0   2^0
+ 2^1=2
+ 2^2=4
+   6     1      1
 </code></pre></div></div>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ sudo useradd pepito =&gt; creando usuario pepito (por defecto se crea un grupo con su mismo nombre)
@@ -170,21 +176,116 @@ x - 1 =&gt; execute
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ chattr +i -V .hidden =&gt; asignando privilegio especial para no eliminar el archivo (ni siquiera root)
 </code></pre></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ =&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ lsattr =&gt; ver los privilegios especiales
 </code></pre></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ =&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ touch fichero2 &amp;&amp; cd / =&gt; creando el "fichero2" y a su vez dirigiendome a la ruta raiz
 </code></pre></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ =&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ find . -name "fich*" =&gt; encuntrame al fichero que comience con "fich" y cualquier cosa "*"
 </code></pre></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ =&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ which file =&gt; mostrar la ruta absoluta del binario "file" dentro del PATH
 </code></pre></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ =&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ echo $PATH =&gt; mostrar la ruta del PATH
 </code></pre></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ =&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ sudo apt install mlocate =&gt; instalando herramienta en ubuntu
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ sudo updatedb =&gt; creando la base de datos de los ficheros del sistema
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ locate fichero =&gt; realizando busqueda de "fichero"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ touch script.sh &amp;&amp; chmod +x script.sh &amp;&amp; nano script.sh =&gt; creando archivo "script", asignando permiso de ejecución y editando el archivo
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"te encuentras en esta ruta [ </span><span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span><span class="s2"> ]"</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ file script.sh=&gt; determina el tipo y formato de un archivo (para realizar esto, hace uso de los "magic numbers")
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ touch fichero.txt &amp;&amp; nano fichero.txt =&gt; creando "fichero.txt" y editando fichero
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GIF8; =&gt; ingresa esto en el "fichero.txt"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ file fichero.txt =&gt; nos mostrar un fichero GIF, esto se debe a los "magic numbers" (47 49 46 38 3B ...	)
+</code></pre></div></div>
+
+<hr />
+
+<p><strong>Scrub</strong>: escribe patrones de forma iterativa en archivos o dispositivos de disco para dificultar la recuperación de los datos</p>
+
+<p><strong>Shred</strong>: herramienta de eliminación de archivos de modo seguro</p>
+
+<p>Fuente: <a href="https://www.computertechblog.com/using-scrub-command-to-secure-erase-data-in-redhat-linux/">https://www.computertechblog.com/using-scrub-command-to-secure-erase-data-in-redhat-linux/</a>
+				<a href="https://www.welivesecurity.com/la-es/2014/11/24/como-hacer-borrado-seguro-shred-linux/">https://www.welivesecurity.com/la-es/2014/11/24/como-hacer-borrado-seguro-shred-linux/</a></p>
+<hr />
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function </span>rmk<span class="o">(){</span>
+  scrub <span class="nt">-p</span> dod <span class="nv">$1</span>
+  <span class="nb">shred</span> <span class="nt">-zun</span> 10 <span class="nt">-v</span> <span class="nv">$1</span>
+<span class="o">}</span>
+<span class="c"># ingresar el el ~/.bashrc o ~/.zshrc</span>
+<span class="c"># z: zero, sobreescribe 0 para evitar dejar rastro</span>
+<span class="c"># u: trunca y elimina el archivo después de sobrescribirlo</span>
+<span class="c"># n: número de veces a sobrescribir el archivo o partición </span>
+<span class="c">#(3 veces por defecto). Cuanto mayor sea este número, más difícil será su recuperación</span>
+<span class="c"># v: verbose o verborragico, muestra el progreso en pantalla</span>
+
+</code></pre></div></div>
+<p><br /></p>
+<hr />
+
+<h1 id="sesión-cinco"><strong>Sesión Cinco</strong></h1>
+<hr />
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ file directorio/* =&gt; mostrar que tipo y formato de archivos hay en "directorio"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$  mkdir example &amp;&amp; cd example &amp;&amp; touch fichero.jpg fichero.png fichero.txt fichero2.txt &amp;&amp; echo "texto" &gt; fichero2.txt &amp;&amp; cd ..
+=&gt;creando directorio, con ficheros
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ find . -name "ficher*" | xargs file 
+=&gt; encontrar desde la ruta actual todos los ficheros que coincidan con "ficher",
+y cualquier cosa "*". A su vez me muestre el formato y tipo de archivo
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ time find . -name "ficher*" | xargs file 
+=&gt; time: nos muestra el tiempo de computo del comando
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ time find example/* =&gt; disminuye el tiempo de computo de computo 
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$  find . -name fichero2.txt | xargs cat
+=&gt; realizando una busqueda de "fichero2.txt" y mostrando su contenido
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cat $(find . -name fichero2.txt) 
+=&gt;mostrando el contenido del output del comando entre "$()"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ctrl + r =&gt; realizando búsqueda de comandos previamente ejecutados
+</code></pre></div></div>
+<p><br /></p>
+<hr />
+
+<p>-writable =&gt; ficheros en los se puede escribir</p>
+
+<p>-executable =&gt; ficheros que se pueden ejecutar</p>
+
+<p>-readable =&gt; ficheros que se pueden leer</p>
+<hr />
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~ $
 </code></pre></div></div>
 :ET
