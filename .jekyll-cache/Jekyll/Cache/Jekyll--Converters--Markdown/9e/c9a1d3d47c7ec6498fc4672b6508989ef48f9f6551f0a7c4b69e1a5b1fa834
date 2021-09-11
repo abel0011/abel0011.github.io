@@ -1,0 +1,824 @@
+I"Y�<p>Bash interfaz de usuario de linea de comandos, especificamente una shell de unix,
+asi como un lenguaje de scripting, es el caparazón del proyexto GNU</p>
+
+<p>El contenido presentado es una recopilación de <a href="https://www.youtube.com/watch?v=RUorAzaDftg">https://www.youtube.com/watch?v=RUorAzaDftg</a></p>
+
+<hr />
+
+<h1 id="movilidad-en-gnulinux"><strong>Movilidad en gnu/linux</strong></h1>
+<hr />
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ mkdir bash =&gt; creando directorio "bash"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cd !$ =&gt; ingresando al directorio recién creado "bash"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ touch - =&gt; crear fichero "-"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ echo "cadena de caracteres" &gt; - =&gt; ingresando cadena de caracteres al fichero "-"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cat ./- =&gt; mostrar contenido del fichero que esta en "-"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ pwd =&gt; print working directory, imprimir directorio de trabajo
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cat /home/user/carpeta/bash/- =&gt; mostrando el archivo desde su ruta absoluta
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ $(pwd) =&gt; recepciona el output de pwd
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cat $(pwd)/- =&gt; mostrar el contenido de "-"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cat $(pwd)/* =&gt; mostrar el contenido de todos los ficheros que se encuentren en esa ruta
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ time $(pwd) =&gt; muestra el tiempo de ejecución de un comando
+</code></pre></div></div>
+
+<p><br /></p>
+<hr />
+
+<h1 id="sesión-dos"><strong>Sesión Dos</strong></h1>
+<hr />
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ mkdir "espacio en blanco" =&gt; creando un directo con espacios en blanco
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cd "espacio en blanco" =&gt; change directory, cambiamos de directorio
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cd espacio\ en\ blanco  =&gt; cambiando de directorio
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ touch "fichero con espacios" =&gt; creando fichero
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ echo $(cat /etc/hosts) &gt; fichero\ con\ espacios =&gt; redirigiendo la salida del comando al fichero con espacios
+</code></pre></div></div>
+
+<p><br /></p>
+<hr />
+
+<p><strong>Expreciones Regulares</strong>: secuencia de caracteres y metacaracteres que forma un patrón de búsqueda, para la búsqueda de patrones de cadenas de caracteres u operaciones de sustituciones.</p>
+
+<p>Fuente <a href="https://francisconi.org/linux/expresiones-regulares">https://francisconi.org/linux/expresiones-regulares</a></p>
+<hr />
+
+<p><br /></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cat "fichero con espacios" =&gt; mostrar el contenido del fichero
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cat fichero\ con\ espacios =&gt; mostrar el contenido del fichero
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cat fi* =&gt; mostrar el contenido del fichero que comienze con "fi" y posteriormente cualquier cosa "*"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cat *os =&gt; mostrar el contenido del fichero que comienze con cualquier cosa "*" y termine en "os"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cat /home/user/carpeta/bash/"espacio en blanco"/* =&gt; mostrar el contenido de todos los ficheros de la ruta actual
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cat "$(pwd)"/* =&gt;mostrar todo el contenido de todos los ficheros de la ruta actual
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cat * =&gt; mostar todo lo que se encuntre en este directorio o ruta
+</code></pre></div></div>
+
+<p><br /></p>
+<hr />
+
+<h1 id="sesión-tres"><strong>Sesión Tres</strong></h1>
+<hr />
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ ls -a =&gt; listar ficheros ocultos 
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ find . =&gt; mustrame todo el contenido partiendo de la ruta actual
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ find -type f =&gt; encuentrame solo los ficheros
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ find -type f -printf "%f\t%u\t%g\t%m\n" | column -t 
+   =&gt; -printf : me imprima
+   =&gt; %f : ficheros
+   =&gt; t%p : de forma tabula me indiques la ruta absoluta
+   =&gt; t%u : de forma tabulada  me indiques el usuario propietario
+   =&gt; t%g : de forma tabulada me indiques el  grupo asignado
+   =&gt; t%m : de forma tabulada me indiques el modo (permiso asignado a niver numerico )
+   =&gt; \n : salto de linea, para formatear el output 
+   =&gt; -t : formatea el output en una tabla
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ touch .hidden =&gt; crear un fichero oculto
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ echo "este fichero no es visible" &gt; .hidden =&gt; agregando cadena de caracteres al fichero
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cd / =&gt; cambiando de directorio a la ruta raiz
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ find . -name .hidden 2&gt;/dev/null =&gt; encuentrame el fichero ".hidden" partiendo del directorio actual
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xargs: ejecuta un comando de forma paralela, con el output del comando ejecutado anteriormente
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ find . -name .hidden | xargs cat =&gt; encuntrame el fichero ".hidden" y asu vez muestrame su contenido
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ find . -type f | xargs grep "este fichero" 2&gt;/dev/null =&gt; encuentra el fichero con el contenido "este fichero"
+</code></pre></div></div>
+
+<p><br /></p>
+<hr />
+
+<h1 id="sesión-cuatro"><strong>Sesión Cuatro</strong></h1>
+<hr />
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>permisos en linux
+.rwxrwxrwx .hidden 
+r - 4 =&gt; read
+w - 2 =&gt; write
+x - 1 =&gt; execute
+(rwx)  (--x) (--x)
+ 111    001   001 
+ 2^0=1  2^0   2^0
+ 2^1=2
+ 2^2=4
+   6     1      1
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ sudo useradd pepito =&gt; creando usuario pepito (por defecto se crea un grupo con su mismo nombre)
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ mkdir directorio_pepito =&gt; creando directorio
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ chgrp pepito directorio_pepito =&gt; change group, asignando el grupo pepito a la carpeta "directorio_pepito"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ chown pepito directorio_pepito =&gt; asignando a pepito como usuario propietario de la carpeta
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ chown pepito:pepito directorio_pepito =&gt; asignando usuario y grupo a la carpeta "directorio_pepito"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ chattr +i -V .hidden =&gt; asignando privilegio especial para no eliminar el archivo (ni siquiera root)
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ lsattr =&gt; ver los privilegios especiales
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ touch fichero2 &amp;&amp; cd / =&gt; creando el "fichero2" y a su vez dirigiendome a la ruta raiz
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ find . -name "fich*" =&gt; encuntrame al fichero que comience con "fich" y cualquier cosa "*"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ which file =&gt; mostrar la ruta absoluta del binario "file" dentro del PATH
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ echo $PATH =&gt; mostrar la ruta del PATH
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ sudo apt install mlocate =&gt; instalando herramienta en ubuntu
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ sudo updatedb =&gt; creando la base de datos de los ficheros del sistema
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ locate fichero =&gt; realizando busqueda de "fichero"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ touch script.sh &amp;&amp; chmod +x script.sh &amp;&amp; nano script.sh =&gt; creando archivo "script", asignando permiso de ejecución y editando el archivo
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"te encuentras en esta ruta [ </span><span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span><span class="s2"> ]"</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ file script.sh=&gt; determina el tipo y formato de un archivo (para realizar esto, hace uso de los "magic numbers")
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ touch fichero.txt &amp;&amp; nano fichero.txt =&gt; creando "fichero.txt" y editando fichero
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GIF8; =&gt; ingresa esto en el "fichero.txt"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ file fichero.txt =&gt; nos mostrar un fichero GIF, esto se debe a los "magic numbers" (47 49 46 38 3B ...	)
+</code></pre></div></div>
+
+<hr />
+
+<p><strong>Scrub</strong>: escribe patrones de forma iterativa en archivos o dispositivos de disco para dificultar la recuperación de los datos</p>
+
+<p><strong>Shred</strong>: herramienta de eliminación de archivos de modo seguro</p>
+
+<p>Fuente: <a href="https://www.computertechblog.com/using-scrub-command-to-secure-erase-data-in-redhat-linux/">https://www.computertechblog.com/using-scrub-command-to-secure-erase-data-in-redhat-linux/</a>
+				<a href="https://www.welivesecurity.com/la-es/2014/11/24/como-hacer-borrado-seguro-shred-linux/">https://www.welivesecurity.com/la-es/2014/11/24/como-hacer-borrado-seguro-shred-linux/</a></p>
+<hr />
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function </span>rmk<span class="o">(){</span>
+  scrub <span class="nt">-p</span> dod <span class="nv">$1</span>
+  <span class="nb">shred</span> <span class="nt">-zun</span> 10 <span class="nt">-v</span> <span class="nv">$1</span>
+<span class="o">}</span>
+<span class="c"># ingresar el el ~/.bashrc o ~/.zshrc</span>
+<span class="c"># z: zero, sobreescribe 0 para evitar dejar rastro</span>
+<span class="c"># u: trunca y elimina el archivo después de sobrescribirlo</span>
+<span class="c"># n: número de veces a sobrescribir el archivo o partición </span>
+<span class="c">#(3 veces por defecto). Cuanto mayor sea este número, más difícil será su recuperación</span>
+<span class="c"># v: verbose o verborragico, muestra el progreso en pantalla</span>
+
+</code></pre></div></div>
+<p><br /></p>
+<hr />
+
+<h1 id="sesión-cinco"><strong>Sesión Cinco</strong></h1>
+<hr />
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ file directorio/* =&gt; mostrar que tipo y formato de archivos hay en "directorio"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$  mkdir example &amp;&amp; cd example &amp;&amp; touch fichero.jpg fichero.png fichero.txt fichero2.txt &amp;&amp; echo "texto" &gt; fichero2.txt &amp;&amp; cd ..
+=&gt;creando directorio, con ficheros
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ find . -name "ficher*" | xargs file 
+=&gt; encontrar desde la ruta actual todos los ficheros que coincidan con "ficher",
+y cualquier cosa "*". A su vez me muestre el formato y tipo de archivo
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ time find . -name "ficher*" | xargs file 
+=&gt; time: nos muestra el tiempo de computo del comando
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ time find example/* =&gt; disminuye el tiempo de computo de computo 
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$  find . -name fichero2.txt | xargs cat
+=&gt; realizando una busqueda de "fichero2.txt" y mostrando su contenido
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cat $(find . -name fichero2.txt) 
+=&gt;mostrando el contenido del output del comando entre "$()"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ctrl + r =&gt; realizando búsqueda de comandos previamente ejecutados
+</code></pre></div></div>
+<p><br /></p>
+<hr />
+
+<p><strong>Busqueda de archivos con el comando find</strong>: herramienta que nos permite la busqueda de
+archivos, directorios y otros objetos buscando más allá del nombre</p>
+
+<p>Fuente: <a href="https://laguialinux.es/buscar-archivos-comando-find/">https://laguialinux.es/buscar-archivos-comando-find/</a></p>
+
+<p>-writable =&gt; ficheros en los se puede escribir</p>
+
+<p>-executable =&gt; ficheros que se pueden ejecutar</p>
+
+<p>-readable =&gt; ficheros que se pueden leer</p>
+<hr />
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ mkdir example2 &amp;&amp; cd example2 &amp;&amp; touch script.txt &amp;&amp; echo "tengo contenido" &gt; script.txt &amp;&amp; cd ..
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ find . -type f -readable ! -executable -size 1k
+=&gt; encontrar ficheros, que tengan permiso de lectura,
+=&gt; que no se puedan ejecutar y que tengan de tamaño
+=&gt; 1 kylobyte
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ find . -type f -readable ! -executable -size 1k | xargs cat 
+=&gt; realizando una lectura del output del comando anterior
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ at $(find . -type f -readable ! -executable -size 1k)
+=&gt; realizando lectura del comando entre "$()"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cat $(find . -type f -readable ! -executable -size 1k) | xargs
+=&gt; formateo de la cadena de texto con xargs 
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$  cat $(find . -type f -readable ! -executable -size 1k) | tr -d ' ' 
+=&gt; tr: sive para realizar sustituciones
+=&gt; -d ' ' eliminar los espacios en blanco 
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ nano example2/script.txt =&gt; editando archivo (copiar este contenido)
+------------------------------------------------
+Tr es un comando de linux 
+
+para realizar 
+
+sustituciones
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cat $(find . -type f -readable ! -executable -size 1k) | tr -d "\n"
+=&gt; tr -d "\n" eliminar saltos de linea
+=&gt; tr -d "\t" eliminar tabulaciones
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cat /etc/passwd | head -n 3
+=&gt; head -n 3 : muestrame las 3 primeras lineas
+=&gt; tail -n 3 : muestrame las 3 ultimas lineas
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ wc -l /etc/passwd
+=&gt; (word count, lines) contar el número de linas de 
+=&gt; "/etc/passwd" 
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ awk 'NR==3' /etc/passwd
+=&gt; mostar solo la tercera linea de "/etc/passwd"
+</code></pre></div></div>
+<p><br /></p>
+<hr />
+
+<p><strong>sed</strong>: (stream editor) sirve para buscar, buscar y remplazar, insertar o eliminar</p>
+
+<p>Fuente: <a href="https://www.ochobitshacenunbyte.com/2019/05/28/uso-del-comando-sed-en-linux-y-unix-con-ejemplos/">https://www.ochobitshacenunbyte.com/2019/05/28/uso-del-comando-sed-en-linux-y-unix-con-ejemplos/</a></p>
+<hr />
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ sed 's/root/bash/' /etc/passwd | head -n 1 
+=&gt; 's/root/bash/' remplaznaod la palabra "root" por "bash" de
+=&gt; la primera coincidencia
+=&gt; head -n 1 mostrando la primera fila de "/etc/passwd"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ sed 's/root/bash/g' /etc/passwd | head -n 1
+=&gt; 's/root/bashh/g' realizar sustitución de manera global
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ nano example2/script.txt 
+---------------------------
+
+
+
+     aprendiendo script
+     en bash
+     copialo con espacios y saltos de linea
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cat $(find . -type f -writable -readable ! -executable -size 1k) | sed 's/^ *//g' 
+=&gt; realizando una sustitución por todo lo que conience '^' en " " y cualquier cosa "*",
+=&gt; de manera global
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ sudo awk '{print $1}' FS=':' /etc/passwd
+=&gt; '{pritn $1}': imprimeme el primer argumento
+=&gt; FS=':': utilizando como delimitador ":"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ cat script.txt | sed '/^\s*$/d' 
+^\s =&gt; cualquier cosa que empiece por espacios
+*   =&gt; segido de la que sea
+$/d =&gt; y que termine en vacio
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+~$ cat aksdf 2&gt;&amp;1 =&gt; cambiando el stderr al stdin
+~$ firefox &gt;/dev/null  2&amp;&gt;1  &amp;
+=&gt; redirigir el flujo del programa al "/dev/null",
+convertir sderr al stdin "2&amp;&gt;1",
+todo va redirigido al /dev/null, 
+el "&amp;" poner el procesos en segundo plano
+disown =&gt; independizar tareas 
+( convertir un procesos hijo a un proceso padre, la terminal proceso padre )
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ find  / -type f -user pepito -group pepito -size 33c 2&gt;/dev/null
+find / =&gt; partiendo desde la ruta raiz
+-type f =&gt; busque todo los archivos que sean ficheros
+-user pepito =&gt; tomando como usuario "pepito"
+-group pepito =&gt; tomando como grupo "pepito"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wc -l =&gt; cuentame todas las linas que hay "-l" ( word count )
+wc -c =&gt; cuentame la cantidad de caracteres "-c"
+~$ cat data.txt | wc -l =&gt; cuentame el numero de lineas que hay  en el fichero
+~$ cat data.txt | grep "millionth" =&gt; esto no es optimo, mostrar el contenido de un fichero para luego hacerle un grep
+~$ grep "millionth" data.txt =&gt; hacer un grep de un criterio en el fichero "data.txt"
+~$ awk '/millionth/' data.txt =&gt; hacer un grep con awk, con la palabra '/millionth/' en el fichero "data.txt"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ awk '/millionth/' data.txt | awk '{print $2}' 
+=&gt; realziando un filtrado del segundo argumento "'{print $2}'"
+
+~$ awk '/millionth/' data.txt | awk 'NF{print $NF}' 
+=&gt; "'NF{print $NF}'" filtrando el ultimo elemento de la linea actual 
+en la que me situo
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ echo "hola que tal" | cut -d ' ' -f 2
+=&gt; toma como argumento los spacios en blanco
+-d ' ' =&gt; utilizando como delimitador el espacio en blanco
+-f 1 =&gt; filtrando solo el primer argumento
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ echo "hol   que tal" | cut -d ' ' -f 2 
+=&gt; va devolver un espacio en blanco ya que el segundo argumento,
+es un espacio en blanco
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ awk '/millionth/' data.txt | rev | awk '{print $1}' | rev
+rev =&gt; revertir la cadeana
+awk '{print $1}' =&gt; impirmiendo el primer agumento
+rev =&gt; revirtiendo la cadana para que vuelva 
+a su estado orginal y no se lea al reves
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ grep "millionth" data.txt -n 
+=&gt; realizando un filtrado por "millionth", sobrel el fichero data.xt,
+ "-n" muesta el numero de la fila
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>awk 'NR==27262' data.txt 
+=&gt; number row (numero de la fila), 
+muestrame lo que haya en la fila 27262 de data.txt
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>awk 'NR==27262{print $2}' data.txt 
+=&gt; mostrando el segundo argumento de la fila 27262 del fichero data.txt
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uniq =&gt; comando para ver cadenas unicas, entre otras utilidades (uniq --help)
+
+~$ cat data.txt | wc -l 
+=&gt; contar el numero de lineas del fichero data.txt
+~$ cat data.txt | sort  
+=&gt; realizando un ordenamiento alfabetico con "sort"
+~$ cat data.txt | sort | uniq -u 
+=&gt; me muestre solo las cadenas que no re repeten, 
+(tenemos que hacer el ordenamiento para facilitar el uso de uniq)
+~$ sort data.txt | uniq -u 
+=&gt; forma mas adecuada de realizar el ordenamiento, 
+"-u" listar cadenas de forma unicas
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>strings data.txt =&gt; listar lista de caracteres imprimibles de un fichero
+
+strings data.txt | grep "==" | tail -n 1 | awk 'NF{print $NF}'
+strings data.txt =&gt; mostrar caracteres imprimibles del fichero data.txt
+grep "==" =&gt; realiza un grep con el elemento "==" (buscar en el archivo con las coincidencias "==")
+tail -n 1 =&gt; obteniendo la  primera fila de la ultimas lineas
+awk 'NF{print $NF}' =&gt; obteniendo el ultimo elemento de la fila en la que me situo
+
+realizando un bucle read line
+-------------------------------
+nano bulce.sh
+chmod +x !$
+nano !$
+
+*******************************************************
+#!/bin/bash
+
+#while read line
+#bucle de read line
+
+#Forma no optima de hacerlo
+#============================
+#cat /etc/passwd | while read line; do
+#       echo "Estamos aqui  =&gt; $line"
+#done
+
+
+#Forma optima de hacero
+#las variables tienen que estar sin espacios
+
+contador=1
+
+while read line;do
+        echo "Linea $contador:  =&gt; $line"
+        let contador+=1
+done &lt; /etc/passwd #Indicando que archivo quieres leer
+********************************************************
+
+realizando bucle read line en un one liner
+----------------------------------------------
+
+contador=1; strings data.txt | grep '==' | while read line; do echo "linea $contador : $line"; let contador+=1; done | awk 'NR==4' | awk 'NF{print $NF}'
+contador=1; =&gt; declarando contador
+strings data.txt =&gt; mostrando caracteres legibles del fichero data.txt
+grep '==' =&gt; mostrando lo que coincida de la expreción regula '=='
+while read line;do echo "linea $contador: $line"; let contador+=1; done =&gt; realizando bulce para mostrar las lineas
+awk 'NR==4' =&gt; mostrando solo la linea 4
+awk 'NF{print $NF}' =&gt; mostrando el ultimo argumento, del output de la fila en la que me encuentro situadoo
+
+
+BANDIT10
+=======
+truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+hora video s4vitar 1:11:43
+
+echo "hola que tal chaval " | base64 =&gt; convirtiendo a base 64
+echo "aG9sYSBxdWUgdGFsIGNoYXZhbAo=" | base64 -d =&gt; decodificar base 64
+echo $(cat data.txt) |base64 -d =&gt; utilizando el output anterior, decodificando en base64
+echo $( cat data.txt ) | base64 -d | tr ' ' '\n' =&gt; conviertiendo los espacios en blanco "' '" en saltos de linea "'\n'" (solo acepta un
+caracter de sustitucion )
+echo $( cat data.txt ) | base64 -d | sed 's/ /--/' =&gt; sustituyendo los espacios con dos guiones "'--'"
+echo $( cat data.txt ) | base64 -d | sed 's/ /---/g' =&gt; sustituyendo de manera global
+ cat /etc/passwd | head -n 1 | tr 'o' '0'
+head -n 1 =&gt; seleccionando la primera linea del output
+tr 'o' '0' =&gt; sustituyendo todas las o por el 0
+echo $( cat data.txt ) | base64 -d | awk 'NF{print $NF}'
+NF{print $NF}  =&gt; obtenendo el ultimo elemento de la linea en donde me situo
+
+
+BANDIT11
+========
+IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+
+el password de bandit 13 se encuentra rotada 13 posiciones investigar!!
+con tr podemos asignar el tipo de rotación
+
+a b c d e f g h i  k  l  m  n  ñ  o  p  q  r  s  t  u  v  w  x  y   z
+1 2 3 4 5 6 7 8 9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26
+
+data.txt
+Gur cnffjbeq vf 5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh
+
+cat data.txt | tr '[G-ZA-Fg-za-f]' '[T-ZA-St-za-s]'
+[G-ZA-Fg-za-f] =&gt; el texto nos muestra que comienza en la g,(partiendo desde g rote 13 posiciones) haci que partimos de la G a la Z
+y lo que caracteres que sobran de la A a la Z (repetimos para que haga el mismo proceso en minuscula )
+[T-ZA-St-za-s] =&gt; contamos las 13 posiciones de la a hasta la T,
+entnces de la T hasta la Z y de los caracteres que faltan de la A a la S (lo mismo con minusculas )
+
+
+BANDIT12
+========
+5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+
+echo "convirtiendo ha hexadecimal " | xxd =&gt; convirtiendo la cadena a hexadecimal con "xxd"
+echo "hola que tal " | xxd -ps =&gt; mostrando solo el formato hexadecimal
+echo data.txt | xxd -r
+-r =&gt; revertir el hexadecimal
+
+reset =&gt; resetear
+file fichero =&gt; ver con que tipo de archivo estamos tratando
+7z =&gt; es para descompresión universal
+7z -l data.gzip =&gt; listame el contenido que estoy descomprimiendo sobre este comprimido
+7z x data.gzip =&gt; extrame el archivo data.gzip
+
+7z l data.gzip | grep "Name" -A 3
+grep "Name" -A 3 =&gt; desde la concidencia "Name" muestrame 3 lineas hacia abajo (-B muestrame hacia arriba) (-C muestrame
+lineas por debajo y por encima )
+
+echo $? =&gt; bit de estado ( 0 = exitoso ) ( 1 = error )
+
+utilidad decompressed.sh =&gt; buscar en github
+
+
+BANDIT13
+=========
+8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+
+( clave privada ssh ) conceptos de ssh
+
+/root/.ssh =&gt; directorio ssh
+/etc/ssh/sshd_config =&gt; habilitar un component  ( indispensable {search = PermitRootLogin } {agregar = PermitidRootLogin yes} )
+
+service ssh start =&gt; iniciar servicio ssh
+service ssh restart =&gt; resetear servicio ssh
+service ssh status =&gt; ver el estado del servicio ssh
+
+ssh-keygen =&gt; generando clave ssh, se almacenara como /root/.ssh/id_rsa, te va pedir que le proporciones una contraseña,
+la contraseña se puede romper con a utilidad john (id_rsa clave privada , id_rsa.pub clave publica)
+
+conceptos
+=========
+Como administrador de red hay ocaciones en las que proporciono la clave id_rsa.pub en el directorio /root/.ssh,
+con el nombre authorized_keys
+ssh-copy-id -i id_rsa root@localhost
+ss-copy-id =&gt; utilidad para usar la clave privada ssh
+-i =&gt; identificar el fichero de la clave privada
+root@localhost =&gt; para el usuario root y la maquina localhost
+
+el otro usuaro
+ssh -i id_rsa root@localhost
+-i =&gt; indicar fichero de identidad
+root@localhost =&gt; para el usuario root y localhost
+
+ ssh -i sshkey.private bandit14@localhost
+ssh -i sshkey.private =&gt; ingresando desde ssh con el fichero sshkey.private
+bandit14@localhost =&gt; al usuario bandit14 desde localhost
+cat /etc/bandit_pass/bandit14 =&gt; ruta del passwd de bandit 14
+
+lsof -i:80 =&gt; que procesos estan corriendo bajo el puerto 80
+
+pwdx 1234 =&gt; desde que ruta se ha ejecutado el proceso con el numero identificador (PID)
+
+
+BANDIT14
+========
+4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+
+echo '' &gt;/dev/tcp/127.0.0.1/30000 =&gt; enviando una cadena vacia a la ruta por el puerto 30 000
+
+echo '' &gt;/dev/tcp/127.0.0.1/30000 &amp;&amp; echo "[*] Puerto abierto" =&gt; si el primer comando es verdadero muestrame el mensaje
+
+bash -c "" =&gt; modo consola o interactivo, quiero ejecutar un comando englobado entre "", con esto ya podemos redirigir el stderr
+
+bash -c "echo '' &gt;/dev/tcp/127.0.0.1/30123" 2&gt;/dev/null &amp;&amp; echo "[*] Puerto abierto" || echo "[x] Puerto Cerrado"
+
+nectar = nc =&gt; abreviatura de netcat
+
+cat /etc/bandit_pass/bandit14 =&gt; archivo de la contraseña de bandit 14
+
+echo "4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e" | nc localhost 30000
+echo "" =&gt; enviando una cadena
+nc =&gt; con netcat
+localhost 30000 =&gt; a localhost sobre el puerto 30000
+
+telnet localhost 30000 =&gt; abriendo un conexion con telnet
+posteriormente enviamos la cadena "" y presionamos enter
+
+
+
+BANDIT15
+========
+BfMYroe26WYalil77FoDi9qh59eK5xNr
+
+En este nivel se utiliza ssl(no podemos utilizar telnet ni netcal ya que la conexion esta cifrada)
+cat /etc/bandit_pass/bandit15 =&gt; fichero del password de bandit 15
+
+openssl s_client -connect localhost:30001
+openssl s_client =&gt; utilizando openssl, como cliente "s_client"
+-connect =&gt; quiero conectarme
+localhost:30001 =&gt; a localhost sobre el puerto 30001
+
+
+
+BANDIT16
+========
+cluFn7wTiGryunymYOu4RcffSxQluehd
+
+utilizando nmap
+---------------
+
+nmap --open -T5 -v -n -p31000-32000 127.0.0.1
+
+--open =&gt; muestrame todos los puertos que se encuentren abiertos
+-T5 =&gt; setTimeout de 5 (el modo mas agresivo y ruidoso)
+-v =&gt; modo verbose para que me reporte el resultado en consola
+-n =&gt; que no aplique resolución dns
+-p31000-32000 =&gt; sobre el rando de puertos 31000-32000
+127.0.0.1 =&gt; sobre la ip local
+
+mktemp -d =&gt; crear directorio temporal
+nos dirigimos al directorio, creamos un fichero id_rsa y pegamos la clave privada
+chmod 600 id_rsa =&gt; la clave debetener esos permisos para ser utilizasa
+
+ssh -i id_rsa bandit17@localhost
+-i =&gt; proporciono la clave privada que esta en el fichero que le indico
+bandit17@localhost =&gt; me conecto a bandit17 sobre localhost
+
+cat /etc/bandit_pass/bandit17 =&gt; clave de bandit17
+
+
+BANDIT17
+========
+xLYVMN9WE5zQ5vHacb0sZEVqbrp7nBTn
+
+comparando ficheros con diff
+----------------------------
+
+diff password.old password.new =&gt; listame las diferencias
+
+&lt; aksldjas =&gt; significa que se ha eliminado esa linea
+&gt; qkqqqq   =&gt; significa que se ha agregado esa linea
+
+
+ps -eo command =&gt; listar todos los comandos que se ejecutan a nivel de sistema en nuestro equipo
+
+cat /etc/passwd | head -n 5 | grep -v -E "root|sys"
+-v =&gt; nos quita la linea que tenga el criterio que le indicamos
+-E =&gt; para filtrar multiples campos
+
+cat /etc/passwd | grep -E "^root|hack" =&gt; realizando filtrado con multiples campos
+cat /etc/passwd | grep -E "^root\|^hack" =&gt; escapando del pipe con "\"
+
+te quedaste en el 2:00:10
+
+BANDIT18
+========
+kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+
+ ssh bandit18@bandit.labs.overthewire.org -p 2220 whoami =&gt; me da tiempo de realizar la ejecución del comando whoami
+ ssh bandit18@bandit.labs.overthewire.org -p 2220 bash =&gt; asignando una bash en el breve tiempo que nos asignan
+
+
+BANDIT19
+========
+IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
+
+./bandit20-do sh =&gt; ejecutando un comando con el usuario propietario del fichero (SUID)
+./bandit20-do bash -p =&gt; "-p" para que nos permita el permiso SUID
+
+
+BANDIT20
+========
+GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+
+./subcontent 5757 =&gt; ejecutando la script de bandit 20
+nc -nlvp 5757 =&gt; pornerme en escucha con netcat, sobre el puerto 5757
+
+
+BANDIT21
+========
+gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
+
+cat cronjob_bandit22
+@reboot bandit22 /usr/bin/cronjob_bandit22.sh &amp;&gt; /dev/null
+
+cat /etc/bandit_pass/bandit22 &gt; /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+
+
+BANDIT22
+========
+Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
+2:10:00
+
+echo "prueba" | md5sum =&gt; realizando hash en md5
+cat /tmp/8ca319486bfbbc3663ea0fbe81326349 =&gt; ruta del hash para bandit23
+
+
+BANDIT23
+========
+jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
+
+watch -n 1 ls -l
+watch -n 1=&gt; que nos muestre cada segundo (monitorizando)
+ls -l =&gt; monitorizando el comando "ls -l" cada segundo
+
+mktemp -d =&gt; crear directorio temporal
+cd !$
+chmod o+wx script.sh
+cp script.sh /val/spool/bandit24/script.sh
+#!/bin/bash
+
+cat /etc/bandit_pass/bandit24 &gt; /tmp/tmp.ESSj7HOBO2/hacksorpwned.txt =&gt; script para que me envie la flag
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for i in $(seq 1 100); do echo "el numero es $i"; done =&gt; seq de secuenciador
+for i in {0001..9999}; do echo "$i : numero}; done =&gt; realizando secuenciador con "0001"
+
+cat dictionary.txt | nc localhost 30002 | grep -v -E "Wrong|Please"
+cat dictionary.txt | nc localhost 30002 =&gt; emitiendo datos al localhost sobre el puerto 30002 con netcat
+grep -v -E =&gt; "-v" eliminar las lineas que tengas las coincidencias escritas, "-E" filtrar por multiples camps
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>more /etc/passwd =&gt; te carga el archivo, sin ocupar toda la pantalla
+ssh -i bandit26.sshkey bandit26@localhost
+presionamos "v"
+
+escribimos
+:e /etc/bandit_pass/bandit26 =&gt; podemos ver el contenido del fichero (flag bandit 26)
+:set sell=/bin/bash =&gt; variable shell va valer /bin/bash
+:shell =&gt; mostrar una shell
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./bandit27-do whoami =&gt; ejecutando el ficheor de bandit 26 con permisos SUID
+./bandit27-do bash -p =&gt; "-p" para que atienda a permisos suid
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone ssh://bandit27-git@localhost/home/bandit27-git/repo
+cat rep/README
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git log --oneline =&gt; ver los commits del repository
+git log --oneline -p =&gt; "-p" ver los cambios en cada commit
+git log -p =&gt; mostrar en formato pagin
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch =&gt; ver en que rama estamos
+git branch -r =&gt; listar las demas ramas del repositorio
+git checkout dev =&gt; cambiando de rama a "dev" (desarrollo)
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git tag =&gt; mostrar los tag del proyecto
+git show secret =&gt; mostrando el contenido del tag "secret"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push -u origin master =&gt; enviando commit al repositorio
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "HOLA QUE TAL" | tr '[A-Z]' '[a-z]' 
+=&gt; convirteindo la cadena de uppercase a lowecase
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo $0 =&gt; esto da como output bash 
+o la terminal donde te encuentres
+</code></pre></div></div>
+:ET
