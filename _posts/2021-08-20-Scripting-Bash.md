@@ -506,11 +506,12 @@ wc -c => cuentame la cantidad de caracteres "-c"
 
 ~~~
 ~$ awk '/millionth/' data.txt | awk '{print $2}' 
-=> realziando un filtrado del segundo argumento "'{print $2}'"
+=> realizando un filtrado del segundo argumento "'{print $2}'"
+~~~
 
+~~~
 ~$ awk '/millionth/' data.txt | awk 'NF{print $NF}' 
-=> "'NF{print $NF}'" filtrando el ultimo elemento de la linea actual 
-en la que me situo
+=> "'NF{print $NF}'" filtrando el ultimo elemento de la linea actual en la que me situo
 ~~~
 
 ~~~
@@ -542,8 +543,7 @@ a su estado orginal y no se lea al reves
 
 ~~~
 awk 'NR==27262' data.txt 
-=> number row (numero de la fila), 
-muestrame lo que haya en la fila 27262 de data.txt
+=> number row (numero de la fila), muestrame lo que haya en la fila 27262 de data.txt
 ~~~
 ~~~
 awk 'NR==27262{print $2}' data.txt 
@@ -555,31 +555,45 @@ uniq => comando para ver cadenas unicas, entre otras utilidades (uniq --help)
 
 ~$ cat data.txt | wc -l 
 => contar el numero de lineas del fichero data.txt
+~~~
+
+~~~
 ~$ cat data.txt | sort  
 => realizando un ordenamiento alfabetico con "sort"
+~~~
+
+~~~
 ~$ cat data.txt | sort | uniq -u 
 => me muestre solo las cadenas que no re repeten, 
 (tenemos que hacer el ordenamiento para facilitar el uso de uniq)
+~~~
+
+~~~
 ~$ sort data.txt | uniq -u 
-=> forma mas adecuada de realizar el ordenamiento, 
-"-u" listar cadenas de forma unicas
+=> forma mas adecuada de realizar el ordenamiento, "-u" listar cadenas de forma unicas
 ~~~
 
 ~~~
 strings data.txt => listar lista de caracteres imprimibles de un fichero
+~~~
 
+~~~
 strings data.txt | grep "==" | tail -n 1 | awk 'NF{print $NF}'
 strings data.txt => mostrar caracteres imprimibles del fichero data.txt
 grep "==" => realiza un grep con el elemento "==" (buscar en el archivo con las coincidencias "==")
 tail -n 1 => obteniendo la  primera fila de la ultimas lineas
 awk 'NF{print $NF}' => obteniendo el ultimo elemento de la fila en la que me situo
+~~~
 
+~~~
 realizando un bucle read line
 -------------------------------
 nano bulce.sh
 chmod +x !$
 nano !$
+~~~~
 
+~~~bash
 *******************************************************
 #!/bin/bash
 
@@ -603,10 +617,14 @@ while read line;do
         let contador+=1
 done < /etc/passwd #Indicando que archivo quieres leer
 ********************************************************
+~~~
 
-realizando bucle read line en un one liner
-----------------------------------------------
+~~~bash
+contador=1; while read line; do; echo "$contador.-número => $line"; let contador+=1; done < /etc/passwd 
+#en una sola linea
+~~~
 
+~~~
 contador=1; strings data.txt | grep '==' | while read line; do echo "linea $contador : $line"; let contador+=1; done | awk 'NR==4' | awk 'NF{print $NF}'
 contador=1; => declarando contador
 strings data.txt => mostrando caracteres legibles del fichero data.txt
@@ -614,102 +632,122 @@ grep '==' => mostrando lo que coincida de la expreción regula '=='
 while read line;do echo "linea $contador: $line"; let contador+=1; done => realizando bulce para mostrar las lineas
 awk 'NR==4' => mostrando solo la linea 4
 awk 'NF{print $NF}' => mostrando el ultimo argumento, del output de la fila en la que me encuentro situadoo
+~~~
 
+~~~
+echo "cambiando a base 64" | base64 => convirtiendo a base 64
+~~~
 
-BANDIT10
-=======
-truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
-hora video s4vitar 1:11:43
+~~~
+echo "Y2FtYmlhbmRvIGEgYmFzZSA2NAo=" | base64 -d => decodificar base 64
+~~~
 
-echo "hola que tal chaval " | base64 => convirtiendo a base 64
-echo "aG9sYSBxdWUgdGFsIGNoYXZhbAo=" | base64 -d => decodificar base 64
+~~~
 echo $(cat data.txt) |base64 -d => utilizando el output anterior, decodificando en base64
-echo $( cat data.txt ) | base64 -d | tr ' ' '\n' => conviertiendo los espacios en blanco "' '" en saltos de linea "'\n'" (solo acepta un
+~~~
+
+~~~
+echo $( cat data.txt ) | base64 -d | tr ' ' '\n' 
+=> conviertiendo los espacios en blanco "' '" en saltos de linea "'\n'" (solo acepta un
 caracter de sustitucion )
+~~~
+
+~~~
 echo $( cat data.txt ) | base64 -d | sed 's/ /--/' => sustituyendo los espacios con dos guiones "'--'"
+~~~
+
+~~~
 echo $( cat data.txt ) | base64 -d | sed 's/ /---/g' => sustituyendo de manera global
- cat /etc/passwd | head -n 1 | tr 'o' '0'
+~~~
+
+~~~
+cat /etc/passwd | head -n 1 | tr 'o' '0'
 head -n 1 => seleccionando la primera linea del output
 tr 'o' '0' => sustituyendo todas las o por el 0
+~~~
+
+~~~
 echo $( cat data.txt ) | base64 -d | awk 'NF{print $NF}'
 NF{print $NF}  => obtenendo el ultimo elemento de la linea en donde me situo
+~~~
 
-
-BANDIT11
-========
-IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
-
-el password de bandit 13 se encuentra rotada 13 posiciones investigar!!
-con tr podemos asignar el tipo de rotación
-
+~~~
 a b c d e f g h i  k  l  m  n  ñ  o  p  q  r  s  t  u  v  w  x  y   z
 1 2 3 4 5 6 7 8 9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26
 
-data.txt
-Gur cnffjbeq vf 5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh
+~$ cat data.txt | tr '[G-ZA-Fg-za-f]' '[T-ZA-St-za-s]'
 
-cat data.txt | tr '[G-ZA-Fg-za-f]' '[T-ZA-St-za-s]'
-[G-ZA-Fg-za-f] => el texto nos muestra que comienza en la g,(partiendo desde g rote 13 posiciones) haci que partimos de la G a la Z
-y lo que caracteres que sobran de la A a la Z (repetimos para que haga el mismo proceso en minuscula )
+[G-ZA-Fg-za-f] => el texto nos muestra que comienza en la g,
+(partiendo desde g rote 13 posiciones) haci que partimos de la G a la Z
+y lo que caracteres que sobran de la A a la F (repetimos para que haga el mismo proceso en minuscula )
+
 [T-ZA-St-za-s] => contamos las 13 posiciones de la a hasta la T,
 entnces de la T hasta la Z y de los caracteres que faltan de la A a la S (lo mismo con minusculas )
+~~~
 
+~~~
+~$ echo "convirtiendo ha hexadecimal " | xxd => convirtiendo la cadena a hexadecimal con "xxd"
+~~~
 
-BANDIT12
-========
-5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+~~~
+~$ echo "hola que tal " | xxd -ps => mostrando solo el formato hexadecimal
+~~~
 
-echo "convirtiendo ha hexadecimal " | xxd => convirtiendo la cadena a hexadecimal con "xxd"
-echo "hola que tal " | xxd -ps => mostrando solo el formato hexadecimal
-echo data.txt | xxd -r
+~~~
+~$ echo data.txt | xxd -r
 -r => revertir el hexadecimal
+~~~
 
+~~~
 reset => resetear
 file fichero => ver con que tipo de archivo estamos tratando
 7z => es para descompresión universal
-7z -l data.gzip => listame el contenido que estoy descomprimiendo sobre este comprimido
-7z x data.gzip => extrame el archivo data.gzip
+~$ 7z -l data.gzip => listame el contenido que estoy descomprimiendo sobre este comprimido
+~$ 7z x data.gzip => extrame el archivo data.gzip
+~~~
 
-7z l data.gzip | grep "Name" -A 3
-grep "Name" -A 3 => desde la concidencia "Name" muestrame 3 lineas hacia abajo (-B muestrame hacia arriba) (-C muestrame
-lineas por debajo y por encima )
+~~~
+~$ 7z l data.gzip | grep "Name" -A 3
+grep "Name" -A 3 => desde la concidencia "Name" muestrame 3 lineas hacia abajo 
+(-B muestrame hacia arriba) (-C muestramelineas por debajo y por encima )
+~~~
 
+~~~
 echo $? => bit de estado ( 0 = exitoso ) ( 1 = error )
-
 utilidad decompressed.sh => buscar en github
+~~~
 
-
-BANDIT13
-=========
-8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
-
+~~~
 ( clave privada ssh ) conceptos de ssh
-
+-----------------------------------------
 /root/.ssh => directorio ssh
-/etc/ssh/sshd_config => habilitar un component  ( indispensable {search = PermitRootLogin } {agregar = PermitidRootLogin yes} )
+/etc/ssh/sshd_config => habilitar un component ( indispensable {search = PermitRootLogin }
+{agregar = PermitidRootLogin yes} )
 
 service ssh start => iniciar servicio ssh
 service ssh restart => resetear servicio ssh
 service ssh status => ver el estado del servicio ssh
 
-ssh-keygen => generando clave ssh, se almacenara como /root/.ssh/id_rsa, te va pedir que le proporciones una contraseña,
+ssh-keygen => generando clave ssh, se almacenara como /root/.ssh/id_rsa, 
+te va pedir que le proporciones una contraseña,
 la contraseña se puede romper con a utilidad john (id_rsa clave privada , id_rsa.pub clave publica)
 
-conceptos
-=========
-Como administrador de red hay ocaciones en las que proporciono la clave id_rsa.pub en el directorio /root/.ssh,
+
+Como administrador de red hay ocaciones en las que proporciono la clave
+id_rsa.pub en el directorio /root/.ssh,
 con el nombre authorized_keys
 ssh-copy-id -i id_rsa root@localhost
 ss-copy-id => utilidad para usar la clave privada ssh
 -i => identificar el fichero de la clave privada
 root@localhost => para el usuario root y la maquina localhost
 
-el otro usuaro
+el otro usuario
+----------------
 ssh -i id_rsa root@localhost
 -i => indicar fichero de identidad
 root@localhost => para el usuario root y localhost
 
- ssh -i sshkey.private bandit14@localhost
+ssh -i sshkey.private bandit14@localhost
 ssh -i sshkey.private => ingresando desde ssh con el fichero sshkey.private
 bandit14@localhost => al usuario bandit14 desde localhost
 cat /etc/bandit_pass/bandit14 => ruta del passwd de bandit 14
@@ -717,55 +755,52 @@ cat /etc/bandit_pass/bandit14 => ruta del passwd de bandit 14
 lsof -i:80 => que procesos estan corriendo bajo el puerto 80
 
 pwdx 1234 => desde que ruta se ha ejecutado el proceso con el numero identificador (PID)
+~~~
 
+~~~
+~$ echo '' >/dev/tcp/127.0.0.1/30000 
+=> enviando una cadena vacia a la ruta por el puerto 30 000
+~~~
 
-BANDIT14
-========
-4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+~~~
+~$echo '' >/dev/tcp/127.0.0.1/30000 && echo "[*] Puerto abierto" 
+=> si el primer comando es verdadero muestrame el mensaje
+~~~
+~~~
+bash -c "" => modo consola o interactivo, quiero ejecutar un comando englobado entre "", 
+con esto ya podemos redirigir el stderr
+~~~
 
-echo '' >/dev/tcp/127.0.0.1/30000 => enviando una cadena vacia a la ruta por el puerto 30 000
+~~~
+~$ bash -c "echo '' >/dev/tcp/127.0.0.1/30123" 2>/dev/null && echo "[*] Puerto abierto" || echo "[x] Puerto Cerrado"
+~~~
 
-echo '' >/dev/tcp/127.0.0.1/30000 && echo "[*] Puerto abierto" => si el primer comando es verdadero muestrame el mensaje
+~~~
+~$ netcat = nc => abreviatura de netcat
+~~~
 
-bash -c "" => modo consola o interactivo, quiero ejecutar un comando englobado entre "", con esto ya podemos redirigir el stderr
-
-bash -c "echo '' >/dev/tcp/127.0.0.1/30123" 2>/dev/null && echo "[*] Puerto abierto" || echo "[x] Puerto Cerrado"
-
-nectar = nc => abreviatura de netcat
-
-cat /etc/bandit_pass/bandit14 => archivo de la contraseña de bandit 14
-
-echo "4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e" | nc localhost 30000
+~~~
+~$ echo "4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e" | nc localhost 30000
 echo "" => enviando una cadena
 nc => con netcat
 localhost 30000 => a localhost sobre el puerto 30000
-
+~~~
+~~~
 telnet localhost 30000 => abriendo un conexion con telnet
 posteriormente enviamos la cadena "" y presionamos enter
+~~~
 
-
-
-BANDIT15
-========
-BfMYroe26WYalil77FoDi9qh59eK5xNr
-
+~~~
 En este nivel se utiliza ssl(no podemos utilizar telnet ni netcal ya que la conexion esta cifrada)
-cat /etc/bandit_pass/bandit15 => fichero del password de bandit 15
 
-openssl s_client -connect localhost:30001
-openssl s_client => utilizando openssl, como cliente "s_client"
+~$ openssl s_client -connect localhost:30001
+
+~$ openssl s_client => utilizando openssl, como cliente "s_client"
 -connect => quiero conectarme
 localhost:30001 => a localhost sobre el puerto 30001
+~~~
 
-
-
-BANDIT16
-========
-cluFn7wTiGryunymYOu4RcffSxQluehd
-
-utilizando nmap
----------------
-
+~~~
 nmap --open -T5 -v -n -p31000-32000 127.0.0.1
 
 --open => muestrame todos los puertos que se encuentren abiertos
@@ -774,113 +809,94 @@ nmap --open -T5 -v -n -p31000-32000 127.0.0.1
 -n => que no aplique resolución dns
 -p31000-32000 => sobre el rando de puertos 31000-32000
 127.0.0.1 => sobre la ip local
+~~~
 
+~~~
 mktemp -d => crear directorio temporal
 nos dirigimos al directorio, creamos un fichero id_rsa y pegamos la clave privada
 chmod 600 id_rsa => la clave debetener esos permisos para ser utilizasa
+~~~
 
+~~~
 ssh -i id_rsa bandit17@localhost
 -i => proporciono la clave privada que esta en el fichero que le indico
 bandit17@localhost => me conecto a bandit17 sobre localhost
+~~~
 
-cat /etc/bandit_pass/bandit17 => clave de bandit17
-
-
-BANDIT17
-========
-xLYVMN9WE5zQ5vHacb0sZEVqbrp7nBTn
-
+~~~
 comparando ficheros con diff
 ----------------------------
 
-diff password.old password.new => listame las diferencias
+~$ diff password.old password.new => listame las diferencias
 
 < aksldjas => significa que se ha eliminado esa linea
 > qkqqqq   => significa que se ha agregado esa linea
+~~~
 
+~~~
+~$ ps -eo command => listar todos los comandos que se ejecutan a nivel de sistema en nuestro equipo
+~~~
 
-ps -eo command => listar todos los comandos que se ejecutan a nivel de sistema en nuestro equipo
-
-cat /etc/passwd | head -n 5 | grep -v -E "root|sys"
+~~~
+~$ cat /etc/passwd | head -n 5 | grep -v -E "root|sys"
 -v => nos quita la linea que tenga el criterio que le indicamos
 -E => para filtrar multiples campos
+~~~
 
-cat /etc/passwd | grep -E "^root|hack" => realizando filtrado con multiples campos
-cat /etc/passwd | grep -E "^root\|^hack" => escapando del pipe con "\"
+~~~
+~$ cat /etc/passwd | grep -E "^root|hack" => realizando filtrado con multiples campos
+~~~
 
-te quedaste en el 2:00:10
+~~~
+~$ cat /etc/passwd | grep -E "^root\|^hack" => escapando del pipe con "\"
+~~~
 
-BANDIT18
-========
-kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
-
+~~~
  ssh bandit18@bandit.labs.overthewire.org -p 2220 whoami => me da tiempo de realizar la ejecución del comando whoami
  ssh bandit18@bandit.labs.overthewire.org -p 2220 bash => asignando una bash en el breve tiempo que nos asignan
+~~~
 
-
-BANDIT19
-========
-IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
-
+~~~
 ./bandit20-do sh => ejecutando un comando con el usuario propietario del fichero (SUID)
 ./bandit20-do bash -p => "-p" para que nos permita el permiso SUID
+~~~
 
-
-BANDIT20
-========
-GbKksEFF4yrVs6il55v6gwY5aVje5f0j
-
+~~~
 ./subcontent 5757 => ejecutando la script de bandit 20
 nc -nlvp 5757 => pornerme en escucha con netcat, sobre el puerto 5757
+~~~
 
+~~~
+~$ echo "prueba" | md5sum => realizando hash en md5
+~~~
 
-BANDIT21
-========
-gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
-
-cat cronjob_bandit22
-@reboot bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
-
-cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
-
-
-BANDIT22
-========
-Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
-2:10:00
-
-echo "prueba" | md5sum => realizando hash en md5
-cat /tmp/8ca319486bfbbc3663ea0fbe81326349 => ruta del hash para bandit23
-
-
-BANDIT23
-========
-jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
-
-watch -n 1 ls -l
+~~~
+~$ watch -n 1 ls -l
 watch -n 1=> que nos muestre cada segundo (monitorizando)
 ls -l => monitorizando el comando "ls -l" cada segundo
-
-mktemp -d => crear directorio temporal
-cd !$
-chmod o+wx script.sh
-cp script.sh /val/spool/bandit24/script.sh
-#!/bin/bash
-
-cat /etc/bandit_pass/bandit24 > /tmp/tmp.ESSj7HOBO2/hacksorpwned.txt => script para que me envie la flag
 ~~~
 
-~~~~
-for i in $(seq 1 100); do echo "el numero es $i"; done => seq de secuenciador
+~~~
+~$ for i in $(seq 1 100); do echo "el numero es $i"; done => seq de secuenciador
+~~~
+
+~~~
 for i in {0001..9999}; do echo "$i : numero}; done => realizando secuenciador con "0001"
+~~~
 
-cat dictionary.txt | nc localhost 30002 | grep -v -E "Wrong|Please"
-cat dictionary.txt | nc localhost 30002 => emitiendo datos al localhost sobre el puerto 30002 con netcat
-grep -v -E => "-v" eliminar las lineas que tengas las coincidencias escritas, "-E" filtrar por multiples camps
+~~~
+~$ cat dictionary.txt | nc localhost 30002 | grep -v -E "Wrong|Please"
+~~~
+
+~~~
+~$ cat dictionary.txt | nc localhost 30002 
+=> emitiendo datos al localhost sobre el puerto 30002 con netcat
+grep -v -E => "-v" eliminar las lineas que tengas las coincidencias escritas, 
+"-E" filtrar por multiples camps
 ~~~~
 
 ~~~
-more /etc/passwd => te carga el archivo, sin ocupar toda la pantalla
+~$ more /etc/passwd => te carga el archivo, sin ocupar toda la pantalla
 ssh -i bandit26.sshkey bandit26@localhost
 presionamos "v"
 
@@ -923,10 +939,9 @@ git push -u origin master => enviando commit al repositorio
 
 ~~~
 echo "HOLA QUE TAL" | tr '[A-Z]' '[a-z]' 
-=> convirteindo la cadena de uppercase a lowecase
+=> convirteindo la cadena a lowecase
 ~~~
 
 ~~~
-echo $0 => esto da como output bash 
-o la terminal donde te encuentres
+echo $0 => muestra el tipo de la terminal
 ~~~
